@@ -94,8 +94,9 @@ def filter_shows_by_date(accounts, start_date, end_date):
     return filtered_shows
 
 def main():
-    st.title("Show Data Filtering")
+    st.title("Upcoming Manhead Artists' Concerts via AtVenu")
 
+    st.sidebar.markdown("### Choose the range of the concerts you would like to pull", unsafe_allow_html=True)
     start_date = st.sidebar.date_input("Start Date")
     end_date = st.sidebar.date_input("End Date")
 
@@ -115,8 +116,7 @@ def main():
             file_name="filtered_shows.csv",
             mime="text/csv"
         )
-    else:
-        st.info("No shows found for the selected date range.")
+ 
 
 if __name__ == "__main__":
     main()
