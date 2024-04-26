@@ -5,8 +5,9 @@ from gql import Client, gql
 from gql.transport.requests import RequestsHTTPTransport
 from datetime import datetime
 
-API_ENDPOINT = "https://api.atvenu.com"
-API_TOKEN = "live_yvYLBo32dRE9z_yCdhwU"
+
+api_endpoint = st.secrets["API_ENDPOINT"]
+api_token = st.secrets["API_TOKEN"]
 
 ACCOUNTS_QUERY = gql("""
     query GetAccounts($first: Int!, $after: String, $toursFirst: Int!, $showsFirst: Int!) {
@@ -57,8 +58,8 @@ def fetch_accounts():
     shows_first = 35  # Adjust based on your needs or limits
 
     transport = RequestsHTTPTransport(
-        url=API_ENDPOINT,
-        headers={"x-api-key": API_TOKEN}
+        url=api_endpoint,
+        headers={"x-api-key": api_token}
     )
     client = Client(transport=transport)
 
