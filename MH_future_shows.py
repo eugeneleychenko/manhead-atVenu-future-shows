@@ -38,6 +38,7 @@ ACCOUNTS_QUERY = gql("""
                                     location {
                                         city
                                         phone
+                                        country
                                     }
                                 }
                             }
@@ -89,7 +90,8 @@ def filter_shows_by_date(accounts, start_date, end_date):
                         "capacity": show["capacity"],
                         "attendance": show["attendance"],
                         "city": show["location"]["city"],
-                        "phone": show["location"]["phone"]
+                        "phone": show["location"]["phone"],
+                        "country": show["location"]["country"]
                     })
 
     return filtered_shows
