@@ -9,35 +9,33 @@ from datetime import datetime
 api_endpoint = st.secrets["API_ENDPOINT"]
 api_token = st.secrets["API_TOKEN"]
 
-ACCOUNTS_QUERY = gql("""
-    query GetAccounts($first: Int!, $after: String, $toursFirst: Int!, $showsFirst: Int!) {
+SHOWS_QUERY = gql("""
+    query GetShows($firstForAccounts: Int!, $afterForAccounts: String, $firstForTours: Int!, $firstForShows: Int!, $range: DateRange) {
         organization {
-            accounts(first: $first, after: $after) {
+            accounts(first: $firstForAccounts, after: $afterForAccounts) {
                 pageInfo {
                     endCursor
                     hasNextPage
                 }
                 nodes {
                     name
-                    tours(first: $toursFirst) {
+                    tours(first: $firstForTours, open: true) {
                         pageInfo {
                             endCursor
                             hasNextPage
                         }
                         nodes {
-                            name
-                            shows(first: $showsFirst) {
+                            shows(first: $firstForShows, showsOverlap: $range) {
                                 pageInfo {
                                     endCursor
                                     hasNextPage
                                 }
                                 nodes {
+                                    uuid
                                     showDate
-                                    attendance
-                                    capacity
                                     location {
+                                        name
                                         city
-                                        phone
                                         country
                                     }
                                 }
@@ -51,12 +49,13 @@ ACCOUNTS_QUERY = gql("""
 """)
 
 @st.cache_data
-def fetch_accounts():
-    accounts = []
-    after = None
-    has_next_page = True
-    tours_first = 35  # Adjust based on your needs or limits
-    shows_first = 35  # Adjust based on your needs or limits
+def fetch_shows(start_date, end_date):
+    shows = []
+    after_accounts = None
+    has_next_page_accounts = True
+    first_for_accounts = 20
+    first_for_tours = 50
+    first_for_shows = 50
 
     transport = RequestsHTTPTransport(
         url=api_endpoint,
@@ -64,37 +63,31 @@ def fetch_accounts():
     )
     client = Client(transport=transport)
 
-    while has_next_page:
-        variables = {"first": 20, "after": after, "toursFirst": tours_first, "showsFirst": shows_first}
-        result = client.execute(ACCOUNTS_QUERY, variable_values=variables)
+    while has_next_page_accounts:
+        variables = {
+            "firstForAccounts": first_for_accounts,
+            "afterForAccounts": after_accounts,
+            "firstForTours": first_for_tours,
+            "firstForShows": first_for_shows,
+            "range": {"start": start_date.strftime("%Y-%m-%d"), "end": end_date.strftime("%Y-%m-%d")}
+        }
+        result = client.execute(SHOWS_QUERY, variable_values=variables)
         fetched_accounts = result["organization"]["accounts"]["nodes"]
-        # Here you would need to add logic to handle pagination for tours and shows within each account
-        accounts.extend(fetched_accounts)
-        page_info = result["organization"]["accounts"]["pageInfo"]
-        has_next_page = page_info["hasNextPage"]
-        after = page_info["endCursor"]
-
-    return accounts
-
-def filter_shows_by_date(accounts, start_date, end_date):
-    filtered_shows = []
-
-    for account in accounts:
-        for tour in account["tours"]["nodes"]:
-            for show in tour["shows"]["nodes"]:
-                show_date = datetime.strptime(show["showDate"], "%Y-%m-%d").date()
-                if start_date <= show_date <= end_date:
-                    filtered_shows.append({
-                        "bandName": account["name"],
-                        "showDate": show["showDate"],
-                        "capacity": show["capacity"],
-                        "attendance": show["attendance"],
+        for account in fetched_accounts:
+            for tour in account["tours"]["nodes"]:
+                for show in tour["shows"]["nodes"]:
+                    shows.append({
+                        "date": show["showDate"],
+                        "band": account["name"],
                         "city": show["location"]["city"],
-                        "phone": show["location"]["phone"],
+                        "venue": show["location"]["name"],
                         "country": show["location"]["country"]
                     })
+        page_info_accounts = result["organization"]["accounts"]["pageInfo"]
+        has_next_page_accounts = page_info_accounts["hasNextPage"]
+        after_accounts = page_info_accounts["endCursor"]
 
-    return filtered_shows
+    return shows
 
 def main():
     st.title("Upcoming Manhead Artists' Concerts via AtVenu")
@@ -104,22 +97,23 @@ def main():
     end_date = st.sidebar.date_input("End Date")
 
     if st.sidebar.button("Run"):
-        accounts = fetch_accounts()
-        filtered_shows = filter_shows_by_date(accounts, start_date, end_date)
+        shows = fetch_shows(start_date, end_date)
 
-        if not filtered_shows:
+        if not shows:
             st.info("No shows found for the selected date range.")
-        df = pd.DataFrame(filtered_shows)
-        st.dataframe(df)
+        else:
+            df = pd.DataFrame(shows)
+            df["date"] = pd.to_datetime(df["date"]).dt.date
+            df = df[["date", "band", "city", "venue", "country"]]
+            st.dataframe(df)
 
-        csv = df.to_csv(index=False)
-        st.download_button(
-            label="Download CSV",
-            data=csv,
-            file_name="filtered_shows.csv",
-            mime="text/csv"
-        )
- 
+            csv = df.to_csv(index=False)
+            st.download_button(
+                label="Download CSV",
+                data=csv,
+                file_name="shows.csv",
+                mime="text/csv"
+            )
 
 if __name__ == "__main__":
     main()
