@@ -1,0 +1,870 @@
+{
+  "types": [
+    {
+      "name": "Boolean",
+      "kind": "SCALAR",
+      "fields": []
+    },
+    {
+      "name": "String",
+      "kind": "SCALAR",
+      "fields": []
+    },
+    {
+      "name": "RootQueries",
+      "kind": "OBJECT",
+      "fields": ["node", "organization", "tokenPermissions"]
+    },
+    {
+      "name": "ID",
+      "kind": "SCALAR",
+      "fields": []
+    },
+    {
+      "name": "DateTime",
+      "kind": "SCALAR",
+      "fields": []
+    },
+    {
+      "name": "Int",
+      "kind": "SCALAR",
+      "fields": []
+    },
+    {
+      "name": "ExternalSaleRegionEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "PageInfo",
+      "kind": "OBJECT",
+      "fields": ["endCursor", "hasNextPage", "hasPreviousPage", "startCursor"]
+    },
+    {
+      "name": "Organization",
+      "kind": "OBJECT",
+      "fields": ["accounts", "name"]
+    },
+    {
+      "name": "Decimal",
+      "kind": "SCALAR",
+      "fields": []
+    },
+    {
+      "name": "Date",
+      "kind": "SCALAR",
+      "fields": []
+    },
+    {
+      "name": "AccountConnection",
+      "kind": "OBJECT",
+      "fields": ["edges", "nodes", "pageInfo"]
+    },
+    {
+      "name": "AccountEdge",
+      "kind": "OBJECT",
+      "fields": ["cursor", "node"]
+    },
+    {
+      "name": "Account",
+      "kind": "OBJECT",
+      "fields": ["externalId", "merchItems", "name", "tours", "uuid"]
+    },
+    {
+      "name": "NodeInterface",
+      "kind": "INTERFACE",
+      "fields": ["uuid"]
+    },
+    {
+      "name": "UUID",
+      "kind": "SCALAR",
+      "fields": []
+    },
+    {
+      "name": "TourConnection",
+      "kind": "OBJECT",
+      "fields": ["edges", "nodes", "pageInfo"]
+    },
+    {
+      "name": "TourEdge",
+      "kind": "OBJECT",
+      "fields": ["cursor", "node"]
+    },
+    {
+      "name": "Tour",
+      "kind": "OBJECT",
+      "fields": [
+        "endDate",
+        "name",
+        "reportCurrencyFormat",
+        "shows",
+        "startDate",
+        "uuid"
+      ]
+    },
+    {
+      "name": "Show",
+      "kind": "OBJECT",
+      "fields": [
+        "apparelTaxRateOne",
+        "apparelTaxRateTwo",
+        "attendance",
+        "capacity",
+        "concessionCompany",
+        "currencyFormat",
+        "displayTimezone",
+        "externalId",
+        "isNotInTourCurrency",
+        "isTaxOnTop",
+        "itemizedTransactions",
+        "location",
+        "mobileOrdersDirectShowLink",
+        "musicTaxRateOne",
+        "musicTaxRateTwo",
+        "nights",
+        "numberOfLocations",
+        "numberOfVendors",
+        "otherTaxRateOne",
+        "otherTaxRateTwo",
+        "settlements",
+        "showDate",
+        "showEndDate",
+        "state",
+        "uuid"
+      ]
+    },
+    {
+      "name": "Location",
+      "kind": "OBJECT",
+      "fields": [
+        "addressLineOne",
+        "addressLineTwo",
+        "capacity",
+        "city",
+        "country",
+        "metadata",
+        "name",
+        "phone",
+        "postalCode",
+        "stateProvince",
+        "uuid"
+      ]
+    },
+    {
+      "name": "JSON",
+      "kind": "SCALAR",
+      "fields": []
+    },
+    {
+      "name": "ShowStateEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "Settlement",
+      "kind": "OBJECT",
+      "fields": [
+        "advancedComps",
+        "apparelVendFee",
+        "apparelVenueCutPercent",
+        "canRelock",
+        "canUnlock",
+        "cashFromCrewSalesAmount",
+        "collectedPayments",
+        "comments",
+        "exchangeRate",
+        "excludeRetailFeeTaxFromAdjustedGross",
+        "expenses",
+        "feuWithholdingPercent",
+        "isArtistFeu",
+        "legacySettlementOutput",
+        "mainCounts",
+        "merchItems",
+        "musicVendFee",
+        "musicVenueCutPercent",
+        "name",
+        "otherVendFee",
+        "otherVenueCutPercent",
+        "paidCashAmount",
+        "paidCheckAmount",
+        "paidToFollowAmount",
+        "path",
+        "paymentInfo",
+        "postedApparelTaxRateOne",
+        "postedApparelTaxRateTwo",
+        "postedMusicTaxRateOne",
+        "postedMusicTaxRateTwo",
+        "postedOtherTaxRateOne",
+        "postedOtherTaxRateTwo",
+        "repEmail",
+        "repName",
+        "repPhone",
+        "retailFeeEnabled",
+        "retailFeePercent",
+        "settledAtTimestamp",
+        "settledByEmail",
+        "settledByName",
+        "settlementOutput",
+        "settlementType",
+        "show",
+        "soundscanEnabled",
+        "soundscanVisible",
+        "status",
+        "taxId",
+        "taxOnVenueCut",
+        "taxRetainmentOne",
+        "taxRetainmentTwo",
+        "uuid",
+        "venueCutMode"
+      ]
+    },
+    {
+      "name": "UnlockableInterface",
+      "kind": "INTERFACE",
+      "fields": ["canRelock", "canUnlock"]
+    },
+    {
+      "name": "SoundscannableInterface",
+      "kind": "INTERFACE",
+      "fields": ["soundscanEnabled", "soundscanVisible"]
+    },
+    {
+      "name": "SettlementTypeEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "SettlementTaxRetainmentOneEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "SettlementTaxRetainmentTwoEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "SettlementVenueCutModeEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "SettlementStatusEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "MerchItemConnection",
+      "kind": "OBJECT",
+      "fields": ["edges", "nodes", "pageInfo"]
+    },
+    {
+      "name": "MerchItemEdge",
+      "kind": "OBJECT",
+      "fields": ["cursor", "node"]
+    },
+    {
+      "name": "MerchItem",
+      "kind": "OBJECT",
+      "fields": [
+        "alternateRemoteImage",
+        "category",
+        "description",
+        "displayModifierNote",
+        "imageUrl",
+        "merchVariants",
+        "name",
+        "productType",
+        "upcOne",
+        "upcTwo",
+        "uuid"
+      ]
+    },
+    {
+      "name": "MerchItemCategoryEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "MerchVariant",
+      "kind": "OBJECT",
+      "fields": ["price", "size", "sku", "uuid"]
+    },
+    {
+      "name": "ProductType",
+      "kind": "OBJECT",
+      "fields": ["name"]
+    },
+    {
+      "name": "MainCountConnection",
+      "kind": "OBJECT",
+      "fields": ["edges", "nodes", "pageInfo"]
+    },
+    {
+      "name": "MainCountEdge",
+      "kind": "OBJECT",
+      "fields": ["cursor", "node"]
+    },
+    {
+      "name": "MainCount",
+      "kind": "OBJECT",
+      "fields": [
+        "calculatedPriceWithTax",
+        "calculatedTaxAmount",
+        "comps",
+        "countIn",
+        "countOut",
+        "crewSalesRecord",
+        "damagedRecord",
+        "merchAdds",
+        "merchItemUuid",
+        "merchVariantUuid",
+        "priceOverride",
+        "registerSalesCached",
+        "taxRateOneOverride",
+        "taxRateTwoOverride",
+        "trailerCompsRecord",
+        "venueCutOverride"
+      ]
+    },
+    {
+      "name": "MerchAdd",
+      "kind": "OBJECT",
+      "fields": ["quantity"]
+    },
+    {
+      "name": "PostSettlementAdjustment",
+      "kind": "OBJECT",
+      "fields": ["adjustmentType", "amount", "createdAt", "quantity"]
+    },
+    {
+      "name": "PostSettlementAdjustmentTypeEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "CollectedPayment",
+      "kind": "OBJECT",
+      "fields": [
+        "appliedTo",
+        "collectedBy",
+        "description",
+        "entryType",
+        "feeAmount",
+        "feePercent",
+        "paymentOverride",
+        "receiptsAmount",
+        "taxAmount",
+        "taxForArtistAmount",
+        "taxForVenueAmount"
+      ]
+    },
+    {
+      "name": "CollectedByEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "AppliedToEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "CollectedPaymentEntryTypeEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "Expense",
+      "kind": "OBJECT",
+      "fields": [
+        "appliedTo",
+        "costAmount",
+        "description",
+        "expenseType",
+        "taxAmount"
+      ]
+    },
+    {
+      "name": "ExpenseTypeEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "SettlementOutput",
+      "kind": "OBJECT",
+      "fields": ["apparel", "merch", "music", "other", "total"]
+    },
+    {
+      "name": "CurrencyFormat",
+      "kind": "OBJECT",
+      "fields": ["code", "isSymbolFirst", "subunits", "symbol"]
+    },
+    {
+      "name": "CurrencyFormatInterface",
+      "kind": "INTERFACE",
+      "fields": ["code", "isSymbolFirst", "subunits", "symbol"]
+    },
+    {
+      "name": "CategorySettlement",
+      "kind": "OBJECT",
+      "fields": ["overrides", "summary", "withoutOverrides"]
+    },
+    {
+      "name": "SettlementOutputFields",
+      "kind": "OBJECT",
+      "fields": [
+        "adjustedGrossSalesAmount",
+        "artistCutAmount",
+        "artistRetailFeeAmount",
+        "artistRetailFeeTaxAmount",
+        "artistTaxOneNetRetainedAmount",
+        "artistTaxOneOnSalesAmount",
+        "artistTaxRetainedAmount",
+        "artistTaxTwoNetRetainedAmount",
+        "artistTaxTwoOnSalesAmount",
+        "expenseTaxAmount",
+        "feeTaxAmount",
+        "feeTaxOneAmount",
+        "feeTaxTwoAmount",
+        "grossSalesAmount",
+        "reducedGrossSalesAmount",
+        "retailFeeAmount",
+        "retailFeeTaxAmount",
+        "taxOnSalesAmount",
+        "taxOneOnSalesAmount",
+        "taxTwoOnSalesAmount",
+        "venueCutAmount",
+        "venueCutTaxAmount",
+        "venueFeuWithholdingAmount",
+        "venueRetailFeeAmount",
+        "venueRetailFeeTaxAmount",
+        "venueTaxOneNetRetainedAmount",
+        "venueTaxOneOnSalesAmount",
+        "venueTaxRetainedAmount",
+        "venueTaxTwoNetRetainedAmount",
+        "venueTaxTwoOnSalesAmount"
+      ]
+    },
+    {
+      "name": "SettlementOutputFieldsInterface",
+      "kind": "INTERFACE",
+      "fields": [
+        "adjustedGrossSalesAmount",
+        "artistCutAmount",
+        "artistRetailFeeAmount",
+        "artistRetailFeeTaxAmount",
+        "artistTaxOneNetRetainedAmount",
+        "artistTaxOneOnSalesAmount",
+        "artistTaxRetainedAmount",
+        "artistTaxTwoNetRetainedAmount",
+        "artistTaxTwoOnSalesAmount",
+        "expenseTaxAmount",
+        "feeTaxAmount",
+        "feeTaxOneAmount",
+        "feeTaxTwoAmount",
+        "grossSalesAmount",
+        "reducedGrossSalesAmount",
+        "retailFeeAmount",
+        "retailFeeTaxAmount",
+        "taxOnSalesAmount",
+        "taxOneOnSalesAmount",
+        "taxTwoOnSalesAmount",
+        "venueCutAmount",
+        "venueCutTaxAmount",
+        "venueFeuWithholdingAmount",
+        "venueRetailFeeAmount",
+        "venueRetailFeeTaxAmount",
+        "venueTaxOneNetRetainedAmount",
+        "venueTaxOneOnSalesAmount",
+        "venueTaxRetainedAmount",
+        "venueTaxTwoNetRetainedAmount",
+        "venueTaxTwoOnSalesAmount"
+      ]
+    },
+    {
+      "name": "OverrideSettlement",
+      "kind": "OBJECT",
+      "fields": [
+        "adjustedGrossSalesAmount",
+        "artistCutAmount",
+        "artistCutPercent",
+        "artistRetailFeeAmount",
+        "artistRetailFeeTaxAmount",
+        "artistTaxOneNetRetainedAmount",
+        "artistTaxOneOnSalesAmount",
+        "artistTaxRetainedAmount",
+        "artistTaxTwoNetRetainedAmount",
+        "artistTaxTwoOnSalesAmount",
+        "expenseTaxAmount",
+        "feeTaxAmount",
+        "feeTaxOneAmount",
+        "feeTaxTwoAmount",
+        "grossSalesAmount",
+        "reducedGrossSalesAmount",
+        "retailFeeAmount",
+        "retailFeeTaxAmount",
+        "taxOnSalesAmount",
+        "taxOneOnSalesAmount",
+        "taxTwoOnSalesAmount",
+        "venueCutAmount",
+        "venueCutPercent",
+        "venueCutTaxAmount",
+        "venueFeuWithholdingAmount",
+        "venueRetailFeeAmount",
+        "venueRetailFeeTaxAmount",
+        "venueTaxOneNetRetainedAmount",
+        "venueTaxOneOnSalesAmount",
+        "venueTaxRetainedAmount",
+        "venueTaxTwoNetRetainedAmount",
+        "venueTaxTwoOnSalesAmount"
+      ]
+    },
+    {
+      "name": "SettlementOutputTotals",
+      "kind": "OBJECT",
+      "fields": [
+        "adjustedGrossSalesAmount",
+        "artistCashFromShowAmount",
+        "artistCashOnHandAmount",
+        "artistCollectedAmount",
+        "artistCutAmount",
+        "artistDueAmount",
+        "artistExpenseAmount",
+        "artistExpenseTaxAmount",
+        "artistFeeAmount",
+        "artistFeeTaxAmount",
+        "artistFeeTaxOneAmount",
+        "artistFeeTaxTwoAmount",
+        "artistOwedAmount",
+        "artistReceiptAmount",
+        "artistRetailFeeAmount",
+        "artistRetailFeeTaxAmount",
+        "artistTaxOneNetRetainedAmount",
+        "artistTaxOneOnSalesAmount",
+        "artistTaxRetainedAmount",
+        "artistTaxTwoNetRetainedAmount",
+        "artistTaxTwoOnSalesAmount",
+        "cashFromCrewSalesAmount",
+        "expenseTaxAmount",
+        "feeTaxAmount",
+        "feeTaxOneAmount",
+        "feeTaxTwoAmount",
+        "grossSalesAmount",
+        "paymentFeesAmount",
+        "paymentReceiptsAmount",
+        "reducedGrossSalesAmount",
+        "retailFeeAmount",
+        "retailFeeTaxAmount",
+        "taxOnSalesAmount",
+        "taxOneOnSalesAmount",
+        "taxTwoOnSalesAmount",
+        "totalOffBottomAmount",
+        "totalWithheldAmount",
+        "vendFeeAmount",
+        "venueCollectedAmount",
+        "venueCutAmount",
+        "venueCutTaxAmount",
+        "venueDueAmount",
+        "venueExpenseAmount",
+        "venueExpenseTaxAmount",
+        "venueFeeAmount",
+        "venueFeeTaxAmount",
+        "venueFeeTaxOneAmount",
+        "venueFeeTaxTwoAmount",
+        "venueFeuWithholdingAmount",
+        "venueOwedAmount",
+        "venueReceiptAmount",
+        "venueRetailFeeAmount",
+        "venueRetailFeeTaxAmount",
+        "venueTaxOneNetRetainedAmount",
+        "venueTaxOneOnSalesAmount",
+        "venueTaxRetainedAmount",
+        "venueTaxTwoNetRetainedAmount",
+        "venueTaxTwoOnSalesAmount"
+      ]
+    },
+    {
+      "name": "Snapshot",
+      "kind": "SCALAR",
+      "fields": []
+    },
+    {
+      "name": "AdvancedComp",
+      "kind": "OBJECT",
+      "fields": [
+        "advancedCompVariants",
+        "billTo",
+        "createdAt",
+        "notes",
+        "pullFrom"
+      ]
+    },
+    {
+      "name": "AdvancedCompVariant",
+      "kind": "OBJECT",
+      "fields": ["merchVariantUuid", "quantity"]
+    },
+    {
+      "name": "PullFromEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "BillToEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "PaymentTypeEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "DisbursementDisplayStatusEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "ItemizedTransactionConnection",
+      "kind": "OBJECT",
+      "fields": ["edges", "nodes", "pageInfo"]
+    },
+    {
+      "name": "ItemizedTransactionEdge",
+      "kind": "OBJECT",
+      "fields": ["cursor", "node"]
+    },
+    {
+      "name": "ItemizedTransaction",
+      "kind": "OBJECT",
+      "fields": [
+        "artistName",
+        "beforeTaxPriceAmount",
+        "cardholderName",
+        "device",
+        "discountName",
+        "grossSoldAmount",
+        "grossSoldAmountWithModifiers",
+        "itemName",
+        "itemizationType",
+        "metadata",
+        "modifiers",
+        "netSoldAmount",
+        "netSoldAmountWithModifiers",
+        "orderId",
+        "orderType",
+        "paymentTimestamp",
+        "productType",
+        "refundedDiscountAmount",
+        "refundedQuantity",
+        "refundedTaxOneAmount",
+        "refundedTaxTwoAmount",
+        "size",
+        "soldQuantity",
+        "staffName",
+        "standName",
+        "taxOneAmount",
+        "taxTwoAmount",
+        "tenderType",
+        "totalDiscountAmount",
+        "totalRefundedAmount",
+        "totalRefundedAmountWithModifiers",
+        "unitPriceAmount"
+      ]
+    },
+    {
+      "name": "ItemizationTypeEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "ItemizationModifier",
+      "kind": "OBJECT",
+      "fields": [
+        "discountAmount",
+        "grossAmount",
+        "modifierName",
+        "refundedDiscountAmount",
+        "refundedGrossAmount",
+        "refundedTaxOneAmount",
+        "refundedTaxTwoAmount",
+        "taxOneAmount",
+        "taxTwoAmount",
+        "unitPriceAmount"
+      ]
+    },
+    {
+      "name": "TimeRange",
+      "kind": "INPUT_OBJECT",
+      "fields": []
+    },
+    {
+      "name": "RegisterSalesEntry",
+      "kind": "OBJECT",
+      "fields": ["collectedAmount", "feesAmount", "salesAmount", "tipsAmount"]
+    },
+    {
+      "name": "OtherRegisterSalesEntry",
+      "kind": "OBJECT",
+      "fields": [
+        "collectedAmount",
+        "feesAmount",
+        "name",
+        "salesAmount",
+        "tipsAmount"
+      ]
+    },
+    {
+      "name": "DiscountTypeEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "Timezone",
+      "kind": "OBJECT",
+      "fields": ["label", "utcOffset"]
+    },
+    {
+      "name": "ShowConnection",
+      "kind": "OBJECT",
+      "fields": ["edges", "nodes", "pageInfo"]
+    },
+    {
+      "name": "ShowEdge",
+      "kind": "OBJECT",
+      "fields": ["cursor", "node"]
+    },
+    {
+      "name": "ShowListFilterEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "SortDirectionEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "DateRange",
+      "kind": "INPUT_OBJECT",
+      "fields": []
+    },
+    {
+      "name": "DisbursementFilters",
+      "kind": "INPUT_OBJECT",
+      "fields": []
+    },
+    {
+      "name": "DisbursementSorting",
+      "kind": "INPUT_OBJECT",
+      "fields": []
+    },
+    {
+      "name": "DisbursementSortingColumnEnum",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "RootMutations",
+      "kind": "OBJECT",
+      "fields": ["doNothing"]
+    },
+    {
+      "name": "ExternalSaleAttributes",
+      "kind": "INPUT_OBJECT",
+      "fields": []
+    },
+    {
+      "name": "ValidationError",
+      "kind": "OBJECT",
+      "fields": ["code", "message", "path"]
+    },
+    {
+      "name": "WristbandAttributes",
+      "kind": "INPUT_OBJECT",
+      "fields": []
+    },
+    {
+      "name": "AddPromoToWristbandsInput",
+      "kind": "INPUT_OBJECT",
+      "fields": []
+    },
+    {
+      "name": "DoNothingPayload",
+      "kind": "OBJECT",
+      "fields": ["success"]
+    },
+    {
+      "name": "__Schema",
+      "kind": "OBJECT",
+      "fields": [
+        "directives",
+        "mutationType",
+        "queryType",
+        "subscriptionType",
+        "types"
+      ]
+    },
+    {
+      "name": "__Type",
+      "kind": "OBJECT",
+      "fields": [
+        "description",
+        "enumValues",
+        "fields",
+        "inputFields",
+        "interfaces",
+        "kind",
+        "name",
+        "ofType",
+        "possibleTypes"
+      ]
+    },
+    {
+      "name": "__Field",
+      "kind": "OBJECT",
+      "fields": [
+        "args",
+        "deprecationReason",
+        "description",
+        "isDeprecated",
+        "name",
+        "type"
+      ]
+    },
+    {
+      "name": "__Directive",
+      "kind": "OBJECT",
+      "fields": [
+        "args",
+        "description",
+        "locations",
+        "name",
+        "onField",
+        "onFragment",
+        "onOperation"
+      ]
+    },
+    {
+      "name": "__EnumValue",
+      "kind": "OBJECT",
+      "fields": ["deprecationReason", "description", "isDeprecated", "name"]
+    },
+    {
+      "name": "__InputValue",
+      "kind": "OBJECT",
+      "fields": ["defaultValue", "description", "name", "type"]
+    },
+    {
+      "name": "__TypeKind",
+      "kind": "ENUM",
+      "fields": []
+    },
+    {
+      "name": "__DirectiveLocation",
+      "kind": "ENUM",
+      "fields": []
+    }
+  ]
+}
