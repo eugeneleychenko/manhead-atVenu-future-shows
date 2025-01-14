@@ -1,1 +1,13 @@
+# Large CSV files
+all_shows.csv
+all_counts.csv
+all_merch.csv
+
+# General CSV files (optional, uncomment if you want to ignore all CSVs)
+# *.csv
+
+# Other common files to ignore
 .env
+__pycache__/
+*.pyc
+.DS_Store
