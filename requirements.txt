@@ -3,3 +3,4 @@ pandas
 gql
 anthropic
 python-dotenv
+requests_toolbelt
