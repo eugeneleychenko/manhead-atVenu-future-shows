@@ -90,6 +90,13 @@ def get_last_update_time():
         return "Unknown"
 
 def main():
+    # Initialize session state for first run
+    if 'first_run' not in st.session_state:
+        st.session_state.first_run = True
+        fetch_shows.clear()
+        get_last_update_time.clear()
+        st.rerun()
+    
     with st.sidebar:
         st.title("MH Future Shows")
         
@@ -125,6 +132,7 @@ def main():
 
         # Add refresh button
         if st.button("Refresh Data"):
+            st.session_state.first_run = True  # Reset first_run state
             fetch_shows.clear()
             get_last_update_time.clear()
             st.rerun()
