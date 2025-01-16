@@ -45,7 +45,7 @@ def fetch_shows(start_date, end_date):
         logger.info(f"DataFrame memory usage: {df.memory_usage().sum() / 1024:.2f} KB")
         
         # Rest of processing...
-        df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
+        df['date'] = pd.to_datetime(df['date'])
         mask = (df['date'] >= pd.Timestamp(start_date)) & (df['date'] <= pd.Timestamp(end_date))
         filtered_df = df[mask]
         shows = filtered_df.to_dict('records')
