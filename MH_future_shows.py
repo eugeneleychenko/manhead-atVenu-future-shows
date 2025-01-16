@@ -14,23 +14,43 @@ import boto3
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-@st.cache_data
+@st.cache_data(ttl=None)
 def fetch_shows(start_date, end_date):
     """Fetch shows from CSV URL and filter by date range"""
     try:
+        # Set up S3 client
+        s3_client = boto3.client('s3',
+                               region_name='nyc3',
+                               endpoint_url='https://nyc3.digitaloceanspaces.com',
+                               aws_access_key_id='DO00WDV2DH8U9KN8WPWG',
+                               aws_secret_access_key='2/FXMxY/zX5n+VtFsODjYedO+4acJElNIv9zJDgH4r4')
+        
+        # Get the file's metadata
+        response = s3_client.head_object(
+            Bucket='mh-upcoming-concerts',
+            Key='latest_concerts.csv'
+        )
+        
+        digital_ocean_timestamp = response['LastModified']
+        etag = response['ETag']
+        
+        logger.info(f"Digital Ocean file timestamp: {digital_ocean_timestamp}")
+        logger.info(f"Digital Ocean ETag: {etag}")
+        
         # Load CSV from URL
         url = "https://mh-upcoming-concerts.nyc3.digitaloceanspaces.com/latest_concerts.csv"
         df = pd.read_csv(url)
         
-        # Convert date column to datetime
-        df['date'] = pd.to_datetime(df['date'])
+        logger.info(f"Successfully loaded CSV with {len(df)} rows")
+        logger.info(f"DataFrame memory usage: {df.memory_usage().sum() / 1024:.2f} KB")
         
-        # Filter by date range
+        # Rest of processing...
+        df['date'] = pd.to_datetime(df['date'])
         mask = (df['date'] >= pd.Timestamp(start_date)) & (df['date'] <= pd.Timestamp(end_date))
         filtered_df = df[mask]
-        
-        # Convert back to dict format to match existing structure
         shows = filtered_df.to_dict('records')
+        
+        logger.info(f"Filtered to {len(shows)} shows between {start_date} and {end_date}")
         return shows
         
     except Exception as e:
@@ -92,6 +112,9 @@ def main():
         
         show_debug = st.checkbox("Show debug logs")
         if show_debug:
+            st.write("Cache Info:")
+            st.write(f"fetch_shows cache info: {fetch_shows.cache_info if hasattr(fetch_shows, 'cache_info') else 'No cache info available'}")
+            st.write("Session State:")
             st.write(st.session_state)
 
     st.title("Upcoming Manhead Artists' Concerts via AtVenu")
