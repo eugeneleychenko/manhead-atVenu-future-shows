@@ -45,7 +45,7 @@ def fetch_shows(start_date, end_date):
         logger.info(f"DataFrame memory usage: {df.memory_usage().sum() / 1024:.2f} KB")
         
         # Rest of processing...
-        df['date'] = pd.to_datetime(df['date'])
+        df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
         mask = (df['date'] >= pd.Timestamp(start_date)) & (df['date'] <= pd.Timestamp(end_date))
         filtered_df = df[mask]
         shows = filtered_df.to_dict('records')
@@ -57,7 +57,7 @@ def fetch_shows(start_date, end_date):
         logger.error(f"Error fetching shows: {str(e)}")
         return []
 
-@st.cache_data
+@st.cache_data(ttl=None)
 def get_last_update_time():
     """Fetch the last update timestamp from Digital Ocean Space"""
     try:
@@ -74,10 +74,16 @@ def get_last_update_time():
             Key='latest_concerts.csv'
         )
         
-        # Get last modified time
+        # Get last modified time and ETag
         last_modified = response['LastModified']
+        etag = response['ETag']
         
-        # Convert to local time and format
+        logger.info(f"get_last_update_time - ETag: {etag}")
+        logger.info(f"get_last_update_time - LastModified: {last_modified}")
+        
+        # Use ETag to force cache invalidation when file changes
+        st.session_state['current_etag'] = etag
+        
         return last_modified.strftime('%Y-%m-%d %H:%M:%S UTC')
     except Exception as e:
         logger.error(f"Error fetching last update time: {str(e)}")
@@ -116,6 +122,12 @@ def main():
             st.write(f"fetch_shows cache info: {fetch_shows.cache_info if hasattr(fetch_shows, 'cache_info') else 'No cache info available'}")
             st.write("Session State:")
             st.write(st.session_state)
+
+        # Add refresh button
+        if st.button("Refresh Data"):
+            fetch_shows.clear()
+            get_last_update_time.clear()
+            st.rerun()
 
     st.title("Upcoming Manhead Artists' Concerts via AtVenu")
     
