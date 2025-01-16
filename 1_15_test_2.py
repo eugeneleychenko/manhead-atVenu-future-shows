@@ -1,3 +1,13 @@
+# This script compares concert files stored in Digital Ocean Spaces cloud storage
+# It does the following:
+# 1. Sets up an S3 client to connect to Digital Ocean Spaces
+# 2. Lists all CSV files in the bucket and sorts them by name
+# 3. Gets the latest and previous CSV files for comparison
+# 4. Downloads both files locally for processing
+# 5. Uses logging to track the execution flow and any errors
+# 6. Requires at least 2 files in the bucket to perform comparison
+
+
 import os
 import boto3
 import pandas as pd

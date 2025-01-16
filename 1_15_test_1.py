@@ -1,3 +1,13 @@
+# This script uploads concert show data to Digital Ocean Spaces cloud storage
+# It does the following:
+# 1. Sets up an S3 client to connect to Digital Ocean Spaces
+# 2. Gets show data for the next 365 days using fetch_shows()
+# 3. Creates a pandas DataFrame with the show data
+# 4. Formats the date column and selects specific columns
+# 5. Saves the data to a CSV file named with today's date
+# 6. Uploads the CSV file to Digital Ocean Spaces with public read access
+
+
 import os
 import boto3
 from datetime import datetime, timedelta

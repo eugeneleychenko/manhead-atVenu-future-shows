@@ -4,3 +4,4 @@ gql
 anthropic
 python-dotenv
 requests_toolbelt
+boto3
