@@ -5,3 +5,5 @@ anthropic
 python-dotenv
 requests_toolbelt
 boto3
+flask
+gunicorn

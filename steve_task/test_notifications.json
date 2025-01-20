@@ -1,0 +1,115 @@
+{
+  "chris": {
+    "email": "nycspicebo+chris@gmail.com",
+    "new_concerts": [
+      {
+        "date": "2025-02-14",
+        "band": "Air Supply",
+        "city": "New York",
+        "state": "NY",
+        "venue": "Madison Square Garden",
+        "country": "United States",
+        "first_seen": "2025-01-19"
+      }
+    ],
+    "all_upcoming": [
+      {
+        "date": "2025-01-15",
+        "band": "Air Supply",
+        "city": "Philadelphia",
+        "state": "NY",
+        "venue": "Wells Fargo Center",
+        "country": "United States",
+        "first_seen": "2025-01-12"
+      },
+      {
+        "date": "2025-02-08",
+        "band": "Air Supply",
+        "city": "Albany",
+        "state": "NY",
+        "venue": "Times Union Center",
+        "country": "United States",
+        "first_seen": "2025-01-18"
+      },
+      {
+        "date": "2025-02-14",
+        "band": "Air Supply",
+        "city": "New York",
+        "state": "NY",
+        "venue": "Madison Square Garden",
+        "country": "United States",
+        "first_seen": "2025-01-19"
+      },
+      {
+        "date": "2025-02-20",
+        "band": "Air Supply",
+        "city": "Buffalo",
+        "state": "NY",
+        "venue": "KeyBank Center",
+        "country": "United States",
+        "first_seen": "2025-01-17"
+      }
+    ]
+  },
+  "steve": {
+    "email": "nycspicebo+steve@gmail.com",
+    "new_concerts": [
+      {
+        "date": "2025-02-14",
+        "band": "Air Supply",
+        "city": "New York",
+        "state": "NY",
+        "venue": "Madison Square Garden",
+        "country": "United States",
+        "first_seen": "2025-01-19"
+      }
+    ],
+    "all_upcoming": [
+      {
+        "date": "2025-01-15",
+        "band": "Air Supply",
+        "city": "Philadelphia",
+        "state": "NY",
+        "venue": "Wells Fargo Center",
+        "country": "United States",
+        "first_seen": "2025-01-12"
+      },
+      {
+        "date": "2025-02-08",
+        "band": "Air Supply",
+        "city": "Albany",
+        "state": "NY",
+        "venue": "Times Union Center",
+        "country": "United States",
+        "first_seen": "2025-01-18"
+      },
+      {
+        "date": "2025-02-14",
+        "band": "Air Supply",
+        "city": "New York",
+        "state": "NY",
+        "venue": "Madison Square Garden",
+        "country": "United States",
+        "first_seen": "2025-01-19"
+      },
+      {
+        "date": "2025-02-15",
+        "band": "Air Supply",
+        "city": "Boston",
+        "state": "MA",
+        "venue": "TD Garden",
+        "country": "United States",
+        "first_seen": "2025-01-15"
+      },
+      {
+        "date": "2025-02-20",
+        "band": "Air Supply",
+        "city": "Buffalo",
+        "state": "NY",
+        "venue": "KeyBank Center",
+        "country": "United States",
+        "first_seen": "2025-01-17"
+      }
+    ]
+  }
+}
