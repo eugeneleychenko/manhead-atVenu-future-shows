@@ -325,7 +325,10 @@ def update_everything():
                 new_df = new_df[["date", "band", "city", "state", "venue", "country"]].copy()
             
             # Fill in missing first_seen dates with today
-            new_df["first_seen"] = new_df.get("first_seen", pd.NA).fillna(today)
+            if "first_seen" not in new_df.columns:
+                new_df["first_seen"] = today
+            else:
+                new_df["first_seen"] = new_df["first_seen"].fillna(today)
             
             # Add first_seen to new_concerts
             new_concerts["first_seen"] = today
