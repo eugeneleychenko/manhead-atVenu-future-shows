@@ -296,11 +296,11 @@ def update_everything():
             previous_df = pd.read_csv('/tmp/previous.csv')
             logger.info(f"Loaded previous data with {len(previous_df)} rows")
 
-            # Find new concerts
+            # Find new concerts - compare without first_seen
             logger.info("Finding newly added concerts compared to previous")
             new_concerts = pd.merge(
-                new_df,
-                previous_df,
+                new_df[["date", "band", "city", "state", "venue", "country"]],
+                previous_df[["date", "band", "city", "state", "venue", "country"]],
                 on=["band", "venue", "date", "city", "state", "country"],
                 how="left",
                 indicator=True
@@ -311,21 +311,29 @@ def update_everything():
             # Add first_seen date to both new_concerts and new_df
             today = datetime.now().strftime("%Y-%m-%d")
             
-            # Add first_seen to new_df by merging with previous_df
-            new_df = pd.merge(
-                new_df,
-                previous_df[["band", "venue", "date", "city", "state", "first_seen"]],
-                on=["band", "venue", "date", "city", "state"],
-                how="left"
-            )
-            # Where first_seen is NaN (new concerts), set to today
-            new_df["first_seen"] = new_df["first_seen"].fillna(today)
+            # Check if first_seen exists in previous_df
+            if 'first_seen' in previous_df.columns:
+                logger.info("Found first_seen in previous data, merging dates")
+                new_df = pd.merge(
+                    new_df[["date", "band", "city", "state", "venue", "country"]],
+                    previous_df[["band", "venue", "date", "city", "state", "first_seen"]],
+                    on=["band", "venue", "date", "city", "state"],
+                    how="left"
+                )
+            else:
+                logger.info("No first_seen in previous data, creating new column")
+                new_df = new_df[["date", "band", "city", "state", "venue", "country"]].copy()
+            
+            # Fill in missing first_seen dates with today
+            new_df["first_seen"] = new_df.get("first_seen", pd.NA).fillna(today)
             
             # Add first_seen to new_concerts
             new_concerts["first_seen"] = today
 
             # Make sure new_df has the correct column order
             new_df = new_df[["date", "band", "city", "state", "venue", "country", "first_seen"]]
+            
+            logger.info(f"Processed DataFrame has {len(new_df)} rows with first_seen dates")
 
             # Generate notifications if there are new concerts
             if len(new_concerts) > 0:
