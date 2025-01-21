@@ -393,12 +393,27 @@ def update_everything():
                     with open('/tmp/notifications.json', 'w') as f:
                         json.dump(notifications, f, indent=2)
                     
+                    # Upload notifications.json
                     safe_upload_file(
                         '/tmp/notifications.json',
                         DO_SPACE_NAME,
                         NOTIFICATIONS_FILE,
                         s3_client
                     )
+
+                    # Update notifications_ready.json to trigger email sending
+                    timestamp = datetime.now().isoformat()
+                    try:
+                        s3_client.put_object(
+                            Bucket=DO_SPACE_NAME,
+                            Key='notifications_ready.json',
+                            Body=json.dumps({"ready": True, "timestamp": timestamp}),
+                            ContentType='application/json',
+                            ACL='public-read'
+                        )
+                        logger.info("Successfully updated notifications_ready.json")
+                    except Exception as e:
+                        logger.error(f"Failed to update notifications_ready.json: {str(e)}")
 
                 # Save new concerts file if there are any
                 if len(new_concerts) > 0:
