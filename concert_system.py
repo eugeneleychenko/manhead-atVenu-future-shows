@@ -339,66 +339,88 @@ def update_everything():
                             "all_upcoming": all_upcoming_formatted
                         }
 
-                # Save notifications if any
+                # Modified file upload section
+                def safe_upload_file(local_path, bucket, key, content_type):
+                    """Helper function to safely upload files with proper content length"""
+                    try:
+                        with open(local_path, 'rb') as file_obj:
+                            content = file_obj.read()
+                            s3_client.put_object(
+                                Bucket=bucket,
+                                Key=key,
+                                Body=content,
+                                ContentLength=len(content),
+                                ContentType=content_type,
+                                ACL='public-read'
+                            )
+                        logger.info(f"Successfully uploaded {local_path} to {bucket}/{key}")
+                        return True
+                    except Exception as e:
+                        logger.error(f"Failed to upload {local_path}: {str(e)}")
+                        return False
+
+                # Use the safe upload function for all files
                 if notifications:
                     logger.info("Saving notifications file to /tmp/notifications.json")
                     with open('/tmp/notifications.json', 'w') as f:
                         json.dump(notifications, f, indent=2)
+                    
+                    safe_upload_file(
+                        '/tmp/notifications.json',
+                        DO_SPACE_NAME,
+                        NOTIFICATIONS_FILE,
+                        'application/json'
+                    )
 
-                logger.info("Uploading notifications to DigitalOcean Spaces")
-                s3_client.upload_file(
-                    '/tmp/notifications.json',
-                    DO_SPACE_NAME,
-                    NOTIFICATIONS_FILE,
-                    ExtraArgs={'ACL': 'public-read', 'ContentType': 'application/json'}
-                )
-                logger.info("Notifications uploaded successfully")
+                # Save new concerts file if there are any
+                if len(new_concerts) > 0:
+                    changes_file = f'new_concerts_{today}.csv'
+                    new_concerts.to_csv('/tmp/changes.csv', index=False)
+                    safe_upload_file(
+                        '/tmp/changes.csv',
+                        DO_SPACE_NAME,
+                        changes_file,
+                        'text/csv'
+                    )
 
-                # Save new concerts file
-                logger.info("Saving new concerts file to /tmp/changes.csv")
-                changes_file = f'new_concerts_{today}.csv'
-                new_concerts.to_csv('/tmp/changes.csv', index=False)
-                logger.info("Uploading new concerts CSV to DO Spaces")
-                s3_client.upload_file(
-                    '/tmp/changes.csv',
+                # Save latest concerts file
+                logger.info("Saving latest concerts file")
+                new_df.to_csv('/tmp/latest.csv', index=False)
+                if not safe_upload_file(
+                    '/tmp/latest.csv',
                     DO_SPACE_NAME,
-                    changes_file,
-                    ExtraArgs={'ACL': 'public-read', 'ContentType': 'text/csv'}
-                )
-                logger.info("New concerts file uploaded successfully")
+                    LATEST_FILE,
+                    'text/csv'
+                ):
+                    raise Exception("Failed to upload latest concerts file")
+
+                # Update last successful run timestamp
+                timestamp = datetime.now().isoformat()
+                try:
+                    s3_client.put_object(
+                        Bucket=DO_SPACE_NAME,
+                        Key=LAST_RUN_FILE,
+                        Body=timestamp.encode(),
+                        ContentLength=len(timestamp.encode()),
+                        ContentType='text/plain',
+                        ACL='public-read'
+                    )
+                    logger.info("Successfully updated last run timestamp")
+                except Exception as e:
+                    logger.error(f"Failed to update last run timestamp: {str(e)}")
 
         except Exception as e:
             logger.warning(f"Could not load or compare previous data: {str(e)}", exc_info=True)
 
-        # 5. Save updated concerts file
-        logger.info("Saving updated 'latest_concerts.csv' to /tmp/latest.csv")
-        new_df.to_csv('/tmp/latest.csv', index=False)
-        logger.info("Uploading 'latest.csv' to DO Spaces as 'latest_concerts.csv'")
-        s3_client.upload_file(
-            '/tmp/latest.csv',
-            DO_SPACE_NAME,
-            LATEST_FILE,
-            ExtraArgs={'ACL': 'public-read', 'ContentType': 'text/csv'}
-        )
-        logger.info("latest_concerts.csv uploaded successfully")
-
-        # 6. Update last successful run timestamp
-        logger.info("Updating last_successful_run.txt to record current run time")
-        s3_client.put_object(
-            Bucket=DO_SPACE_NAME,
-            Key=LAST_RUN_FILE,
-            Body=datetime.now().isoformat(),
-            ACL='public-read',
-            ContentType='text/plain'
-        )
-        logger.info("Last successful run timestamp updated")
-
-        # 7. Cleanup
-        logger.info("Cleaning up local temporary files")
+        # Cleanup
+        logger.info("Cleaning up temporary files")
         for f in ['/tmp/latest.csv', '/tmp/previous.csv', '/tmp/changes.csv', '/tmp/notifications.json']:
             if os.path.exists(f):
-                os.remove(f)
-                logger.info(f"Removed {f}")
+                try:
+                    os.remove(f)
+                    logger.info(f"Removed {f}")
+                except Exception as e:
+                    logger.warning(f"Failed to remove {f}: {str(e)}")
 
         logger.info("Update process completed successfully")
         return True
