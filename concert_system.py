@@ -335,6 +335,18 @@ def update_everything():
             
             logger.info(f"Processed DataFrame has {len(new_df)} rows with first_seen dates")
 
+            # After processing new data and before notifications
+            logger.info("Saving and uploading latest concerts file")
+            new_df.to_csv('/tmp/latest.csv', index=False)
+            if not safe_upload_file(
+                '/tmp/latest.csv',
+                DO_SPACE_NAME,
+                LATEST_FILE,
+                'text/csv'
+            ):
+                raise Exception("Failed to upload latest concerts file")
+            logger.info("Successfully uploaded new latest_concerts.csv to DigitalOcean")
+
             # Generate notifications if there are new concerts
             if len(new_concerts) > 0:
                 logger.info("Generating notifications for newly added concerts")
@@ -405,17 +417,6 @@ def update_everything():
                         changes_file,
                         'text/csv'
                     )
-
-                # Save latest concerts file
-                logger.info("Saving latest concerts file")
-                new_df.to_csv('/tmp/latest.csv', index=False)
-                if not safe_upload_file(
-                    '/tmp/latest.csv',
-                    DO_SPACE_NAME,
-                    LATEST_FILE,
-                    'text/csv'
-                ):
-                    raise Exception("Failed to upload latest concerts file")
 
                 # Update last successful run timestamp
                 timestamp = datetime.now().isoformat()
