@@ -246,6 +246,16 @@ def format_concert(concert):
     First seen: {concert.get('first_seen', 'N/A')}
     """
 
+def safe_upload_file(filename: str, bucket: str, key: str, s3_client) -> bool:
+    """Safely upload a file to S3, with retries and error handling"""
+    try:
+        with open(filename, 'rb') as f:
+            s3_client.upload_fileobj(f, bucket, key)
+        return True
+    except Exception as e:
+        logging.error(f"Error uploading {filename} to {bucket}/{key}: {e}")
+        return False
+
 def update_everything():
     """Main function that updates all necessary files and notifications"""
     logger.info("Starting update_everything()")
@@ -345,7 +355,7 @@ def update_everything():
                 '/tmp/latest.csv',
                 DO_SPACE_NAME,
                 LATEST_FILE,
-                'text/csv'
+                s3_client
             ):
                 raise Exception("Failed to upload latest concerts file")
             logger.info("Successfully uploaded new latest_concerts.csv to DigitalOcean")
@@ -377,26 +387,6 @@ def update_everything():
                             "all_upcoming": all_upcoming_formatted
                         }
 
-                # Modified file upload section
-                def safe_upload_file(local_path, bucket, key, content_type):
-                    """Helper function to safely upload files with proper content length"""
-                    try:
-                        with open(local_path, 'rb') as file_obj:
-                            content = file_obj.read()
-                            s3_client.put_object(
-                                Bucket=bucket,
-                                Key=key,
-                                Body=content,
-                                ContentLength=len(content),
-                                ContentType=content_type,
-                                ACL='public-read'
-                            )
-                        logger.info(f"Successfully uploaded {local_path} to {bucket}/{key}")
-                        return True
-                    except Exception as e:
-                        logger.error(f"Failed to upload {local_path}: {str(e)}")
-                        return False
-
                 # Use the safe upload function for all files
                 if notifications:
                     logger.info("Saving notifications file to /tmp/notifications.json")
@@ -407,7 +397,7 @@ def update_everything():
                         '/tmp/notifications.json',
                         DO_SPACE_NAME,
                         NOTIFICATIONS_FILE,
-                        'application/json'
+                        s3_client
                     )
 
                 # Save new concerts file if there are any
@@ -418,7 +408,7 @@ def update_everything():
                         '/tmp/changes.csv',
                         DO_SPACE_NAME,
                         changes_file,
-                        'text/csv'
+                        s3_client
                     )
 
                 # Update last successful run timestamp
