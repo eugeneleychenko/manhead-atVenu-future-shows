@@ -246,15 +246,53 @@ def format_concert(concert):
     First seen: {concert.get('first_seen', 'N/A')}
     """
 
+def ensure_bucket_public(s3_client, bucket_name):
+    """Ensure the bucket is publicly accessible"""
+    try:
+        # Set bucket policy to public
+        public_policy = {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Sid": "PublicReadGetObject",
+                    "Effect": "Allow",
+                    "Principal": "*",
+                    "Action": ["s3:GetObject"],
+                    "Resource": [f"arn:aws:s3:::{bucket_name}/*"]
+                }
+            ]
+        }
+        
+        # Convert policy to JSON string
+        policy_json = json.dumps(public_policy)
+        
+        # Apply the public policy to the bucket
+        s3_client.put_bucket_policy(
+            Bucket=bucket_name,
+            Policy=policy_json
+        )
+        
+        logger.info(f"Successfully set bucket {bucket_name} to public")
+        return True
+    except Exception as e:
+        logger.error(f"Error setting bucket policy: {e}")
+        return False
+
 def safe_upload_file(filename: str, bucket: str, key: str, s3_client) -> bool:
     """Safely upload a file to S3, with retries and error handling"""
     try:
+        # First ensure bucket is public
+        ensure_bucket_public(s3_client, bucket)
+        
         with open(filename, 'rb') as f:
             s3_client.upload_fileobj(
                 f, 
                 bucket, 
                 key,
-                ExtraArgs={'ACL': 'public-read'}
+                ExtraArgs={
+                    'ACL': 'public-read',
+                    'ContentType': 'text/csv'  # Add proper content type
+                }
             )
         return True
     except Exception as e:
