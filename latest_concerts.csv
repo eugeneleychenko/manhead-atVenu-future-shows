@@ -1,290 +1,298 @@
-date,band,city,state,venue,country
-2025-01-16,Air Supply,Tulsa,OK,River Spirit Casino Resort - Paradise Cove,United States
-2025-01-17,Air Supply,Oklahoma City,OK,The Civic Center Music Hall,United States
-2025-01-22,Air Supply,Moncton Northwest,NB,Casino New Brunswick,Canada
-2025-01-25,Air Supply,Orillio,Ontario,Casino Roma Resort,Canada
-2025-02-07,Air Supply,Bristol,VA,Hard Rock Hotel & Casino Bristol,United States
-2025-02-08,Air Supply,Cincinnati,OH,"Hard Rock Casino Cincinnati, OH",United States
-2025-02-14,Air Supply,San Jose,CA,San Jose Civic Auditorium,United States
-2025-02-15,Air Supply,Rancho Mirage,CA, Agua Caliente Casino Resort Spa,United States
-2025-02-16,Air Supply,Valley Center,CA,Harrah's Resort SoCal- The Event Center,United States
-2025-02-21,Air Supply,Waukegan,IL,Genesee Theater,United States
-2025-02-22,Air Supply,Indianapolis,IN,Old National Centre,United States
-2025-02-23,Air Supply,Wilmington,DE,Grand Opera House,United States
-2025-03-07,Air Supply,Myrtle Beach,SC,The Carolina Opry Theatre,United States
-2025-03-22,Air Supply,Daytona Beach,FL,Peabody Auditorium,United States
-2025-03-28,Air Supply,Atlantic City,NJ,Ocean Resorts & Casino,United States
-2025-05-11,Alice in Chains (MH),Columbus,OH,Sonic Temple Festival,United States
-2025-04-11,B 52's,Las Vegas,NV,Venetian Theatre at the Venetian Hotel,United States
-2025-04-12,B 52's,Las Vegas,NV,Venetian Theatre at the Venetian Hotel,United States
-2025-04-16,B 52's,Las Vegas,NV,Venetian Theatre at the Venetian Hotel,United States
-2025-04-18,B 52's,Las Vegas,NV,Venetian Theatre at the Venetian Hotel,United States
-2025-04-19,B 52's,Las Vegas,NV,Venetian Theatre at the Venetian Hotel,United States
-2025-06-06,Brantley Gilbert (MH),Myrtle Beach,SC,Carolina Country Music Festival,United States
-2025-06-20,Brantley Gilbert (MH),Buffalo,NY,WYRK's Taste of Country,United States
-2025-07-10,Brantley Gilbert (MH),Fort Loramie,OH,Country Concert,United States
-2025-02-15,Brantley Gilbert (MH),Okeechobee,FL,Fred Smith Rodeo Arena,United States
-2025-02-27,Brantley Gilbert (MH),Everett,WA,Angel of the Winds Arena,United States
-2025-02-28,Brantley Gilbert (MH),Missoula,MT,Adams Center ,United States
-2025-03-01,Brantley Gilbert (MH),Kennewick,WA,Toyota Center,United States
-2025-03-06,Brantley Gilbert (MH),Ontario,CA,Toyota Arena,United States
-2025-03-07,Brantley Gilbert (MH),Prescott Valley,AZ,Findlay Toyota Center,United States
-2025-03-08,Brantley Gilbert (MH),Tempe,AZ,Mullett Arena,United States
-2025-03-13,Brantley Gilbert (MH),Bloomington,IL,Grossinger Motors Arena,United States
-2025-03-14,Brantley Gilbert (MH),Cedar Rapids,IA,Alliant Energy Power House,United States
-2025-03-15,Brantley Gilbert (MH),Independence,MO,Cable Dahmer Arena,United States
-2025-03-20,Brantley Gilbert (MH),Salem,VA,Salem Civic Center,United States
-2025-03-21,Brantley Gilbert (MH),Athens,GA,Akins Ford Arena,United States
-2025-03-22,Brantley Gilbert (MH),Hunstsville,AL,The Orion Amphitheater,United States
-2025-03-27,Brantley Gilbert (MH),Lowell,MA,Tsongas Center at UMass,United States
-2025-03-28,Brantley Gilbert (MH),Portland,ME,Cross Insurance Arena ME,United States
-2025-03-29,Brantley Gilbert (MH),Bridgeport,CT,Total Mortgage Arena,United States
-2025-04-10,Brantley Gilbert (MH),Jacksonville,FL,VyStar Veterans Memorial Arena,United States
-2025-04-11,Brantley Gilbert (MH),Tallahassee,FL,Donald L Tucker Civic Center,United States
-2025-04-12,Brantley Gilbert (MH),Pensacola,FL,Pensacola Bay Center,United States
-2025-04-24,Brantley Gilbert (MH),Albany,NY,Times Union Center,United States
-2025-04-25,Brantley Gilbert (MH),Utica,NY,Utica Memorial Auditorium,United States
-2025-04-26,Brantley Gilbert (MH),Wilkes Barre,PA,Mohegan Sun Arena,United States
-2025-02-08,Cyndi Lauper (MH),Glasgow,,OVO Hydro,United Kingdom
-2025-02-09,Cyndi Lauper (MH),Manchester,,Co-Op Live,United Kingdom
-2025-02-11,Cyndi Lauper (MH),London,,The O2 Arena,United Kingdom
-2025-02-14,Cyndi Lauper (MH),BIRMINGHAM,,BP PULSE LIVE,United Kingdom
-2025-02-16,Cyndi Lauper (MH),Belfast,,SSE Arena,United Kingdom
-2025-02-19,Cyndi Lauper (MH),Budapest,,Papp Laszlo Budapest Sport Arena,Hungary
-2025-02-21,Cyndi Lauper (MH),Łôtź,,Atlas Arena,Poland
-2025-02-23,Cyndi Lauper (MH),Prague,,O2 Arena ,Czech Republic
-2025-02-25,Cyndi Lauper (MH),Berlin,DE,Uber Arena,Germany
-2025-02-26,Cyndi Lauper (MH),Dusseldorf,,ISS Dome,Germany
-2025-02-28,Cyndi Lauper (MH),Paris,,Accor Hotel Arena,France
-2025-02-25,Deftones (MH),Portland,OR,Moda Center,United States
-2025-02-27,Deftones (MH),Seattle,WA,Climate Pledge Arena,United States
-2025-03-01,Deftones (MH),Sacramento,CA,Golden 1 Center,United States
-2025-03-04,Deftones (MH),San Francisco,CA,Chase Center,United States
-2025-03-05,Deftones (MH),Inglewood,CA,Kia Forum,United States
-2025-03-08,Deftones (MH),Las Vegas,NV,MGM Grand Garden Arena,United States
-2025-03-09,Deftones (MH),Phoenix,AZ,Footprint Center,United States
-2025-03-12,Deftones (MH),Austin,TX,Moody Center,United States
-2025-03-13,Deftones (MH),San Antonio,TX,Frost Bank Center,United States
-2025-03-15,Deftones (MH),Dallas,TX,American Airlines Center,United States
-2025-03-16,Deftones (MH),Houston,TX,Toyota Center,United States
-2025-03-18,Deftones (MH),Atlanta,GA,State Farm Arena,United States
-2025-03-20,Deftones (MH),Orlando,FL,Kia Center,United States
-2025-03-22,Deftones (MH),Sunrise,FL,AMERANT BANK ARENA,United States
-2025-03-24,Deftones (MH),Charlotte,NC,Spectrum Center,United States
-2025-03-26,Deftones (MH),Nashville,TN,Bridgestone Arena,United States
-2025-03-28,Deftones (MH),"Indianapolis, IN",IN,Gainbridge Fieldhouse ,United States
-2025-03-29,Deftones (MH),Columbus,OH,Nationwide Arena,United States
-2025-03-31,Deftones (MH),Chicago,IL,United Center,United States
-2025-04-01,Deftones (MH),Detroit,MI,Little Caesars Arena,United States
-2025-04-03,Deftones (MH),New York City,NY,Madison Square Garden Arena,United States
-2025-04-04,Deftones (MH),Philadelphia,PA,Wells Fargo Center,United States
-2025-04-06,Deftones (MH),Washington,DC,Capital One Arena,United States
-2025-04-08,Deftones (MH),Boston,MA,TD Garden,United States
-2025-04-09,Deftones (MH),Newark,NJ,Prudential Center,United States
-2025-01-16,EarthGang,Stockholm,,Nalen,Sweden
-2025-01-18,EarthGang,Kobenhavn,,Vega,Denmark
-2025-01-19,EarthGang,Berlin,,Gretchen,Germany
-2025-01-20,EarthGang,Amsterdam,,Melkweg,Netherlands
-2025-01-21,EarthGang,Cologne,,Club Bahnhof Ehrenfeld,Germany
-2025-01-23,EarthGang,Zurich,,Dynamo,Switzerland
-2025-01-24,EarthGang,Paris,,Trabendo,France
-2025-01-26,EarthGang,Manchester,,Gorilla,United Kingdom
-2025-02-21,Fall Out Boy,Tempe,AZ,Innings Festival,United States
-2025-05-17,Garbage (MH),Pasadena,CA,Cruel World Festival,United States
-2025-03-12,Garbage (MH),Bogota,,royale center,Colombia
-2025-03-14,Garbage (MH),Santiago,,Movistar Arena,Chile
-2025-03-18,Garbage (MH),,,Estadio Obras Sanitarias,Argentina
-2025-03-21,Garbage (MH),,Rio De Janeiro,Vivo Rio,Brazil
-2025-03-22,Garbage (MH),Sao Paulo,,Terra SP,Brazil
-2025-03-23,Garbage (MH),Curitiba,,Live Curitiba,Brazil
-2025-04-04,Garbage (MH),Monterrey,,Tecate Pal Norte,Mexico
-2025-08-02,Garbage (MH),Arlington,TX,Globe Life Field,United States
-2025-10-18,Gaslight Anthem (MH),Las Vegas,NV,Las Vegas Festival Grounds (When We Were Young),United States
-2025-04-04,Gavin DeGraw,Fort Lauderdale,FL,Tortuga Festival,United States
-2025-01-16,Halestorm (MH),Chattanooga,TN,The Signal,United States
-2025-01-17,Halestorm (MH),Biloxi,MS,Hard Rock Live (Biloxi),United States
-2025-01-19,Halestorm (MH),Pensacola,FL,Vinyl Music Hall,United States
-2025-01-21,Halestorm (MH),Savannah,GA,District Live,United States
-2025-01-22,Halestorm (MH),Charleston,SC,Charleston Music Hall,United States
-2025-01-24,Halestorm (MH),Springfield,MA,MGM Springfield,United States
-2025-01-25,Halestorm (MH),South Burlington,VT,Higher Ground,United States
-2025-01-23,Kameron Marlowe (MH),Athens,GA,Akins Ford Arena,United States
-2025-01-24,Kameron Marlowe (MH),Charleston,WV,Charleston Coliseum,United States
-2025-01-25,Kameron Marlowe (MH),State College,PA,Bryce Jordan Center,United States
-2025-01-30,Kameron Marlowe (MH),Kingston,RI,Ryan Center,United States
-2025-01-31,Kameron Marlowe (MH),Portland,,Cross Insurance Arena,United States
-2025-02-01,Kameron Marlowe (MH),Amherst,MA,Mullins Center ,United States
-2025-02-06,Kameron Marlowe (MH),Duluth,MN,DECC AMSOIL ARENA,United States
-2025-02-07,Kameron Marlowe (MH),Minneapolis,MN,Target Center,United States
-2025-02-08,Kameron Marlowe (MH),Champaign,IL,State Farm Center,United States
-2025-02-12,Kameron Marlowe (MH),Detroit,MI,The Fillmore,United States
-2025-02-13,Kameron Marlowe (MH),Tupelo,MS,Cadence Bank Arena,United States
-2025-02-14,Kameron Marlowe (MH),Saint Louis,MO,Chaifetz Arena,United States
-2025-02-15,Kameron Marlowe (MH),Louisville,KY,KFC Yum Center,United States
-2025-02-20,Kameron Marlowe (MH),Park City,KS,Hartman Arena,United States
-2025-02-21,Kameron Marlowe (MH),Lincoln,NE,Pinnacle Bank Arena,United States
-2025-02-22,Kameron Marlowe (MH),Cedar Rapids,IA,Alliant Energy Powerhouse,United States
-2025-03-07,Kameron Marlowe (MH),Charles Town,WV,Hollywood Casino,United States
-2025-03-08,Kameron Marlowe (MH),Lexington,KY,Manchester Music Hall,United States
-2025-03-13,Kameron Marlowe (MH),Tulsa,OK,Cain's Ballroom,United States
-2025-03-14,Kameron Marlowe (MH),Cedar Pak,TX,The Haute Spot,United States
-2025-03-15,Kameron Marlowe (MH),Grant,OK,stage 271,United States
-2025-03-21,Kameron Marlowe (MH),Adrian,MI,Merillat Sport and Fitness Center,United States
-2025-03-22,Kameron Marlowe (MH),Peoria,IL,Peoria Civic Center,United States
-2025-03-29,Kameron Marlowe (MH),PORT ST LUCIE,FL,MIDFLORIDA CREDIT UNION EVENT CENTER,United States
-2025-02-13,Matt Nathanson,Miami,FL,Sail Across The Sun,United States
-2025-02-19,Matt Nathanson,Clearwater,Fl,Bilheimer Capitol Theatre,United States
-2025-02-20,Matt Nathanson,Fort Lauderdale,FL,Culture Room,United States
-2025-02-21,Matt Nathanson,Orlando,FL,House of Blues,United States
-2025-02-22,Matt Nathanson,Atlanta,GA,Center Stage,United States
-2025-02-23,Matt Nathanson,Durham,NC,Carolina Theatre of Durham,United States
-2025-02-25,Matt Nathanson,Washington,DC,Lincoln Theatre,United States
-2025-02-26,Matt Nathanson,Morristown,NJ,Mayo Performing Arts Center,United States
-2025-02-27,Matt Nathanson,Glenside,PA,The Keswick Theatre,United States
-2025-02-28,Matt Nathanson,Port Chester,NY,The Capitol Theatre,United States
-2025-03-01,Matt Nathanson,Medford,MA,Chevalier Theatre,United States
-2025-03-02,Matt Nathanson,Buffalo,NY,Asbury Hall at Babeville,United States
-2025-03-04,Matt Nathanson,Toronto,ON,The Opera House,Canada
-2025-03-05,Matt Nathanson,Royal Oak,MI,Royal Oak Music Theatre,United States
-2025-03-06,Matt Nathanson,Evanston,IL,Cahn Auditorium,United States
-2025-03-08,Matt Nathanson,Minneapolis,MN,Uptown Theatre,United States
-2025-03-11,Matt Nathanson,Milwaukee,WI,Pabst Theater,United States
-2025-03-13,Matt Nathanson,Saint Louis,MO,The Pageant,United States
-2025-03-14,Matt Nathanson,Columbus,OH,The Bluestone,United States
-2025-03-15,Matt Nathanson,Nashville,INDIANA,Brown Country Music Center,United States
-2025-03-16,Matt Nathanson,Nashville,TN,Ryman Auditorium,United States
-2025-03-19,Matt Nathanson,Birmingham,AL,WorkPlay Theatre,United States
-2025-03-20,Matt Nathanson,New Orleans,LA,Tiptina's,United States
-2025-03-22,Matt Nathanson,Fort Worth,TX,Tannahill's Tavern & Music Hall,United States
-2025-03-23,Matt Nathanson,Oklahoma City,OK,Tower Theatre,United States
-2025-03-25,Matt Nathanson,Denver,CO,Ogden Theater,United States
-2025-03-26,Matt Nathanson,Aspen,CO,Belly Up,United States
-2025-03-27,Matt Nathanson,Beaver Creek,CO,Vilar Performing Arts Center,United States
-2025-03-28,Matt Nathanson,Salt lake City,UT,The Commonwealth Room,United States
-2025-03-30,Matt Nathanson,Portland,OR,Revolution Hall,United States
-2025-04-01,Matt Nathanson,Seattle,WA,The Showbox,United States
-2025-04-03,Matt Nathanson,Napa,CA,The Uptown Theatre,United States
-2025-04-04,Matt Nathanson,San Francisco,CA,Palace of Fine Arts Theatre,United States
-2025-04-05,Matt Nathanson,Del Mar,CA,The Sound At Del Mar,United States
-2025-04-06,Matt Nathanson,Santa Ana,CA,The Observatory OC,United States
-2025-05-30,Michael Franti & Spearhead (Manhead),Morrison,CO,Red Rocks Amphitheatre,United States
-2025-11-04,Michael Franti & Spearhead (Manhead),Miami,FL,Soulshine At Sea,United States
-2025-10-18,Panic! At the Disco,Las Vegas,NV,Las Vegas Festival Grounds (When We Were Young),United States
-2025-10-19,Panic! At the Disco,Nashville,TN,Nissan Stadium,United States
-2025-07-18,Toto (MH),West Palm Beach,FL,iTHINK Financial Amphitheatre,United States
-2025-07-19,Toto (MH),Tampa,FL,MIDFLORIDA Credit Union Amphitheatre,United States
-2025-07-21,Toto (MH),Birmingham,AL,Coca Cola Amphitheater,United States
-2025-07-22,Toto (MH),Alpharetta,GA,Ameris Bank Amphitheatre,United States
-2025-07-24,Toto (MH),Burgettstown,PA,The Pavilion at Star Lake,United States
-2025-07-25,Toto (MH),Holmdel,NJ,PNC Bank Arts Center,United States
-2025-07-26,Toto (MH),Boston,MA,Leader Bank Pavilion,United States
-2025-07-28,Toto (MH),Gilford,NH,BankNH Pavilion,United States
-2025-07-30,Toto (MH),Bridgeport,CT,Hartford HealthCare Amphitheatre,United States
-2025-08-01,Toto (MH),Atlantic City,NJ,Hard Rock Live at Etess Arena,United States
-2025-08-03,Toto (MH),Cincinnati,OH,Riverbend Music Center,United States
-2025-08-05,Toto (MH),Maryland Heights,MO,Hollywood Casino Amphitheatre STL,United States
-2025-08-06,Toto (MH),Noblesville,IN,Ruoff Music Center,United States
-2025-08-08,Toto (MH),Cuyahoga Falls,OH,Blossom Music Center,United States
-2025-08-09,Toto (MH),Tinley Park,IL,Credit Union 1 Amphitheatre,United States
-2025-08-11,Toto (MH),Village of Clarkston,MI,Pine Knob Music Theatre,United States
-2025-08-13,Toto (MH),Bristow,VA,Jiffy Lube Live,United States
-2025-08-14,Toto (MH),Charlotte,NC,PNC Music Pavilion,United States
-2025-08-15,Toto (MH),Nashville,TN,Ascend Amphitheater,United States
-2025-08-17,Toto (MH),Oklahoma City,OK,The Zoo Amphitheatre,United States
-2025-08-18,Toto (MH),Irving,TX,The Pavilion at Toyota Music Factory,United States
-2025-08-21,Toto (MH),Phoenix,AZ,Arizona Financial Theatre,United States
-2025-08-23,Toto (MH),Las Vegas,NV,Fontainebleau Las Vegas - Theatre,United States
-2025-08-24,Toto (MH),Inglewood,CA,Kia Forum,United States
-2025-08-25,Toto (MH),Concord,CA,Toyota Pavilion at Concord,United States
-2025-08-27,Toto (MH),West Valley City,UT,Utah First Credit Union Amphitheatre,United States
-2025-08-29,Toto (MH),Puyallup,WA,Washington State Fair,United States
-2025-08-30,Toto (MH),Ridgefield,WA,RV Inn Style Resorts Amphitheater,United States
-2025-02-06,Tyler Childers (MH),AUKLAND,,SPARK ARENA,New Zealand
-2025-02-08,Tyler Childers (MH),Sandstone Point,,Sandstone Point Hotel,Australia
-2025-02-09,Tyler Childers (MH),Tyagarah,,The Green Room - Byron Bay,Australia
-2025-02-11,Tyler Childers (MH),Sydney,,The Hordern Pavilion,Australia
-2025-02-15,Tyler Childers (MH),Newcastle,,Foreshore Park,Australia
-2025-02-16,Tyler Childers (MH),Canbera ACT,,Canbera Royal Theatre,Australia
-2025-02-20,Tyler Childers (MH),Melbourne,,Sidney Myer Music Bowl,Australia
-2025-02-22,Tyler Childers (MH),Korumburra,,Coal Creek Community Park,Australia
-2025-02-24,Tyler Childers (MH),North Adelaide,South Australia,The Drive,Australia
-2025-02-28,Tyler Childers (MH),Perth,,Kings park & botanic garden,Australia
-2025-11-15,Tyler Childers (MH),London,,The O2,United Kingdom
-2025-04-03,Tyler Childers (MH),New Orleans,LA,Smoothie King Center,United States
-2025-04-06,Tyler Childers (MH),North Little Rock,AR,Simmons Bank Arena,United States
-2025-04-07,Tyler Childers (MH),Oklahoma City,OK,Paycom Center,United States
-2025-04-09,Tyler Childers (MH),Minneapolis,MN,Target Center,United States
-2025-04-13,Tyler Childers (MH),Charlottesville,VA,John Paul Jones Arena,United States
-2025-04-15,Tyler Childers (MH),Raleigh,NC,Coastal Credit Union Music Park,United States
-2025-04-16,Tyler Childers (MH),Charlotte,NC,PNC Music Pavilion,United States
-2025-04-19,Tyler Childers (MH),Lexington,KY,Kroger Field,United States
-2025-07-26,Tyler Childers (MH),East Troy,WI,Alpine Valley Music Theatre,United States
-2025-05-29,Tyler Childers (MH),Jacksonville,FL,VyStar Veterans Memorial Arena,United States
-2025-05-31,Tyler Childers (MH),Panama City Beach,FL,Pepsi Gulf Coast Jam,United States
-2025-06-01,Tyler Childers (MH),Orange Beach,AL,The Amphitheater at the Wharf,United States
-2025-06-03,Tyler Childers (MH),The Woodlands,TX,The Cynthia Woods Mitchell Pavillion,United States
-2025-06-05,Tyler Childers (MH),Albuquerque,NM,Isleta Amphitheater,United States
-2025-06-07,Tyler Childers (MH),Las Vegas,NV,MGM Grand Garden Arena,United States
-2025-06-08,Tyler Childers (MH),Phoenix,AZ,Talking Stick Resort Amphitheater,United States
-2025-06-10,Tyler Childers (MH),Los Angeles,CA,Hollywood Bowl,United States
-2025-09-24,Tyler Childers (MH),Camden,NJ,Freedom Mortgage Pavilion,United States
-2025-09-25,Tyler Childers (MH),Mansfield,MA,Xfinity Center,United States
-2025-09-27,Tyler Childers (MH),Bristow,VA,Jiffy Lube Live,United States
-2025-09-29,Tyler Childers (MH),Forest Hills,NY,Forest Hills Stadium,United States
-2025-10-03,Tyler Childers (MH),Cincinnati,OH,Riverbend Music Center,United States
-2025-10-07,Tyler Childers (MH),Cuyahoga Falls,OH,Blossom Music Center,United States
-2025-10-10,Tyler Childers (MH),Nashville,TN,Geodis Park,United States
-2025-01-16,Umphrey's McGee ,Athens,GA,Georgia Theatre,United States
-2025-01-17,Umphrey's McGee ,Saxapahaw,NC,Haw River Ballroom,United States
-2025-01-18,Umphrey's McGee ,Charles Town,WV,Hollywood Casino at Charles Town Races,United States
-2025-01-19,Umphrey's McGee ,Roanoke,VA,Shaftman Performance Hall,United States
-2025-01-22,Umphrey's McGee ,Charlottesville,VA,Jefferson Theater,United States
-2025-01-23,Umphrey's McGee ,Wilmington,DE,The Queen,United States
-2025-01-24,Umphrey's McGee ,Jim Thorpe,PA,Penn's Peak,United States
-2025-01-25,Umphrey's McGee ,Atlantic City,NJ,Sound Waves at Hard Rock Hotel & Casino,United States
-2025-01-30,Umphrey's McGee ,Sayreville,NJ,Starland Ballroom,United States
-2025-01-31,Umphrey's McGee ,Port Chester,NY,The Capitol Theatre,United States
-2025-02-02,Umphrey's McGee ,Huntington,NY,Paramount Theatre,United States
-2025-02-26,Umphrey's McGee ,Columbia,SC,The Senate,United States
-2025-02-27,Umphrey's McGee ,Birmingham,AL,Iron City Birmingham,United States
-2025-02-28,Umphrey's McGee ,Chattanooga,TN,The Signal,United States
-2025-03-01,Umphrey's McGee ,Savannah,GA,Johnny Mercer Theatre,United States
-2025-03-05,Umphrey's McGee ,Knoxville,TN,The Mill & Mine,United States
-2025-03-06,Umphrey's McGee ,Louisville,KY,Old Forester's Paristown Hall,United States
-2025-03-07,Umphrey's McGee ,South Bend,IN,Morris Performing Arts Center,United States
-2025-03-08,Umphrey's McGee ,Milwaukee,WI,The Riverside Theater,United States
-2025-03-12,Umphrey's McGee ,Bozeman,MT,The Elm,United States
-2025-03-13,Umphrey's McGee ,Great Falls,MT,The Newberry,United States
-2025-03-14,Umphrey's McGee ,Airway Heights,WA,Spokane Live,United States
-2025-03-15,Umphrey's McGee ,Boise,ID,Treefort Music Festival,United States
-2025-03-17,Umphrey's McGee ,Stateline,NV,Bally's Lake Tahoe,United States
-2025-03-19,Umphrey's McGee ,Petaluma,CA,Mystic Theatre,United States
-2025-03-20,Umphrey's McGee ,Sacramento,CA,Ace of Spades,United States
-2025-03-21,Umphrey's McGee ,San Diego,CA,The Observatory North Park,United States
-2025-03-22,Umphrey's McGee ,Santa Ana,CA,The Observatory,United States
-2025-02-12,WILLIE'S RESERVE (MH),Pompano Beach,FL,Pompano Beach Amphitheater,United States
-2025-02-13,WILLIE'S RESERVE (MH),Immokalee,FL,Seminole Casino,United States
-2025-02-15,WILLIE'S RESERVE (MH),Clearwater,FL,The Baycare Sound,United States
-2025-02-17,WILLIE'S RESERVE (MH),Key West,FL,Coffee Butler Amphitheater,United States
-2025-02-19,WILLIE'S RESERVE (MH),"St. Augustine, Florida",FL,St. Augustine Amphitheatre,United States
-2025-02-22,WILLIE'S RESERVE (MH),Orlando,FL,Orlando Amphitheater,United States
-2025-03-13,WILLIE'S RESERVE (MH),Spicewood,TX,Luck Ranch,United States
-2025-04-18,WILLIE'S RESERVE (MH),New Braunfels,TX,Whitewater Amphitheater,United States
-2025-10-18,Yellowcard (MH),Las Vegas,NV,Las Vegas Festival Grounds (When We Were Young),United States
-2025-01-16,Zach Top (MH),Omaha,NE,Steelhouse Omaha,United States
-2025-01-17,Zach Top (MH),Saint Louis,MO,Ballpark Village,United States
-2025-01-18,Zach Top (MH),Fayetteville,AR,JJ's Live,United States
-2025-01-23,Zach Top (MH),Denver,CO,Grizzly Rose,United States
-2025-01-29,Zach Top (MH),Columbus,OH,The Bluestone,United States
-2025-01-31,Zach Top (MH),Royal Oak,MI,Royal Oak Music Theatre,United States
-2025-02-01,Zach Top (MH),Cincinnati,OH,The Andrew J Brady Music Center,United States
-2025-02-06,Zach Top (MH),West Des Moines,IA,Val Air Ballroom,United States
-2025-02-07,Zach Top (MH),Tulsa,OK,Cain's Ballroom,United States
-2025-02-13,Zach Top (MH),Jackson,MS,Mississippi Coliseum ,United States
-2025-02-14,Zach Top (MH),Durant,OK,Chocktaw GrandTheater,United States
-2025-02-15,Zach Top (MH),Fort Worth,TX,Dickies Arena,United States
-2025-02-16,Zach Top (MH),San Antonio,TX,Frost Bank Center,United States
-2025-02-26,Zach Top (MH),Chattanooga,TN,The Signal,United States
-2025-02-28,Zach Top (MH),Nashville,TN,Ryman Auditorium,United States
-2025-03-05,Zach Top (MH),Jacksonville,FL,FIVE,United States
-2025-03-08,Zach Top (MH),Atlanta,GA,Buckhead Theater,United States
+date,band,city,state,venue,country,first_seen
+2025-01-22,Air Supply,Moncton Northwest,NB,Casino New Brunswick,Canada,2025-01-21
+2025-01-25,Air Supply,Orillio,Ontario,Casino Roma Resort,Canada,2025-01-21
+2025-02-07,Air Supply,Bristol,VA,Hard Rock Hotel & Casino Bristol,United States,2025-01-21
+2025-02-08,Air Supply,Cincinnati,OH,"Hard Rock Casino Cincinnati, OH",United States,2025-01-21
+2025-02-14,Air Supply,San Jose,CA,San Jose Civic Auditorium,United States,2025-01-21
+2025-02-15,Air Supply,Rancho Mirage,CA, Agua Caliente Casino Resort Spa,United States,2025-01-21
+2025-02-16,Air Supply,Valley Center,CA,Harrah's Resort SoCal- The Event Center,United States,2025-01-21
+2025-02-21,Air Supply,Waukegan,IL,Genesee Theater,United States,2025-01-21
+2025-02-22,Air Supply,Indianapolis,IN,Old National Centre,United States,2025-01-21
+2025-02-23,Air Supply,Wilmington,DE,Grand Opera House,United States,2025-01-21
+2025-03-07,Air Supply,Myrtle Beach,SC,The Carolina Opry Theatre,United States,2025-01-21
+2025-03-22,Air Supply,Daytona Beach,FL,Peabody Auditorium,United States,2025-01-21
+2025-03-28,Air Supply,Atlantic City,NJ,Ocean Resorts & Casino,United States,2025-01-21
+2025-05-11,Alice in Chains (MH),Columbus,OH,Sonic Temple Festival,United States,2025-01-21
+2025-04-11,B 52's,Las Vegas,NV,The Venetian Theatre at the Venetian Resort,United States,2025-01-22
+2025-04-12,B 52's,Las Vegas,NV,The Venetian Theatre at the Venetian Resort,United States,2025-01-22
+2025-04-16,B 52's,Las Vegas,NV,The Venetian Theatre at the Venetian Resort,United States,2025-01-22
+2025-04-18,B 52's,Las Vegas,NV,The Venetian Theatre at the Venetian Resort,United States,2025-01-22
+2025-04-19,B 52's,Las Vegas,NV,The Venetian Theatre at the Venetian Resort,United States,2025-01-22
+2025-01-23,Band Loula,Bloomington,IL,Bloomington Center for the Performing Arts,United States,2025-01-21
+2025-01-30,Band Loula,Lafayette,IN,Long Center for the Performing Arts,United States,2025-01-21
+2025-02-20,Band Loula,Wheeling,WV,The Capitol Theatre - WV,United States,2025-01-21
+2025-06-06,Brantley Gilbert (MH),Myrtle Beach,SC,Carolina Country Music Festival,United States,2025-01-21
+2025-06-20,Brantley Gilbert (MH),Buffalo,NY,WYRK's Taste of Country,United States,2025-01-21
+2025-07-10,Brantley Gilbert (MH),Fort Loramie,OH,Country Concert,United States,2025-01-21
+2025-02-15,Brantley Gilbert (MH),Okeechobee,FL,Fred Smith Rodeo Arena,United States,2025-01-21
+2025-02-27,Brantley Gilbert (MH),Everett,WA,Angel of the Winds Arena,United States,2025-01-21
+2025-02-28,Brantley Gilbert (MH),Missoula,MT,Adams Center ,United States,2025-01-21
+2025-03-01,Brantley Gilbert (MH),Kennewick,WA,Toyota Center,United States,2025-01-21
+2025-03-06,Brantley Gilbert (MH),Ontario,CA,Toyota Arena,United States,2025-01-21
+2025-03-07,Brantley Gilbert (MH),Prescott Valley,AZ,Findlay Toyota Center,United States,2025-01-21
+2025-03-08,Brantley Gilbert (MH),Tempe,AZ,Mullett Arena,United States,2025-01-21
+2025-03-13,Brantley Gilbert (MH),Bloomington,IL,Grossinger Motors Arena,United States,2025-01-21
+2025-03-14,Brantley Gilbert (MH),Cedar Rapids,IA,Alliant Energy Power House,United States,2025-01-21
+2025-03-15,Brantley Gilbert (MH),Independence,MO,Cable Dahmer Arena,United States,2025-01-21
+2025-03-20,Brantley Gilbert (MH),Salem,VA,Salem Civic Center,United States,2025-01-21
+2025-03-21,Brantley Gilbert (MH),Athens,GA,Akins Ford Arena,United States,2025-01-21
+2025-03-22,Brantley Gilbert (MH),Hunstsville,AL,The Orion Amphitheater,United States,2025-01-21
+2025-03-27,Brantley Gilbert (MH),Lowell,MA,Tsongas Center at UMass,United States,2025-01-21
+2025-03-28,Brantley Gilbert (MH),Portland,ME,Cross Insurance Arena ME,United States,2025-01-21
+2025-03-29,Brantley Gilbert (MH),Bridgeport,CT,Total Mortgage Arena,United States,2025-01-21
+2025-04-10,Brantley Gilbert (MH),Jacksonville,FL,VyStar Veterans Memorial Arena,United States,2025-01-21
+2025-04-11,Brantley Gilbert (MH),Tallahassee,FL,Donald L Tucker Civic Center,United States,2025-01-21
+2025-04-12,Brantley Gilbert (MH),Pensacola,FL,Pensacola Bay Center,United States,2025-01-21
+2025-04-24,Brantley Gilbert (MH),Albany,NY,Times Union Center,United States,2025-01-21
+2025-04-25,Brantley Gilbert (MH),Utica,NY,Utica Memorial Auditorium,United States,2025-01-21
+2025-04-26,Brantley Gilbert (MH),Wilkes Barre,PA,Mohegan Sun Arena,United States,2025-01-21
+2025-02-08,Cyndi Lauper (MH),Glasgow,,OVO Hydro,United Kingdom,2025-01-21
+2025-02-09,Cyndi Lauper (MH),Manchester,,Co-Op Live,United Kingdom,2025-01-21
+2025-02-11,Cyndi Lauper (MH),London,,The O2 Arena,United Kingdom,2025-01-23
+2025-02-14,Cyndi Lauper (MH),BIRMINGHAM,,BP PULSE LIVE,United Kingdom,2025-01-21
+2025-02-16,Cyndi Lauper (MH),Belfast,,SSE Arena,United Kingdom,2025-01-23
+2025-02-19,Cyndi Lauper (MH),Budapest,,Papp Laszlo Budapest Sport Arena,Hungary,2025-01-23
+2025-02-21,Cyndi Lauper (MH),Łôtź,,Atlas Arena,Poland,2025-01-21
+2025-02-23,Cyndi Lauper (MH),Prague,,O2 Arena ,Czech Republic,2025-01-23
+2025-02-25,Cyndi Lauper (MH),Berlin,DE,Uber Arena,Germany,2025-01-21
+2025-02-26,Cyndi Lauper (MH),Dusseldorf,,ISS Dome,Germany,2025-01-23
+2025-02-28,Cyndi Lauper (MH),Paris,,Accor Hotel Arena,France,2025-01-23
+2025-02-25,Deftones (MH),Portland,OR,Moda Center,United States,2025-01-21
+2025-02-27,Deftones (MH),Seattle,WA,Climate Pledge Arena,United States,2025-01-21
+2025-03-01,Deftones (MH),Sacramento,CA,Golden 1 Center,United States,2025-01-21
+2025-03-04,Deftones (MH),San Francisco,CA,Chase Center,United States,2025-01-21
+2025-03-05,Deftones (MH),Inglewood,CA,Kia Forum,United States,2025-01-21
+2025-03-08,Deftones (MH),Las Vegas,NV,MGM Grand Garden Arena,United States,2025-01-21
+2025-03-09,Deftones (MH),Phoenix,AZ,Footprint Center,United States,2025-01-21
+2025-03-12,Deftones (MH),Austin,TX,Moody Center,United States,2025-01-21
+2025-03-13,Deftones (MH),San Antonio,TX,Frost Bank Center,United States,2025-01-21
+2025-03-15,Deftones (MH),Dallas,TX,American Airlines Center,United States,2025-01-21
+2025-03-16,Deftones (MH),Houston,TX,Toyota Center,United States,2025-01-21
+2025-03-18,Deftones (MH),Atlanta,GA,State Farm Arena,United States,2025-01-21
+2025-03-20,Deftones (MH),Orlando,FL,Kia Center,United States,2025-01-21
+2025-03-22,Deftones (MH),Sunrise,FL,AMERANT BANK ARENA,United States,2025-01-21
+2025-03-24,Deftones (MH),Charlotte,NC,Spectrum Center,United States,2025-01-21
+2025-03-26,Deftones (MH),Nashville,TN,Bridgestone Arena,United States,2025-01-21
+2025-03-28,Deftones (MH),"Indianapolis, IN",IN,Gainbridge Fieldhouse ,United States,2025-01-21
+2025-03-29,Deftones (MH),Columbus,OH,Nationwide Arena,United States,2025-01-21
+2025-03-31,Deftones (MH),Chicago,IL,United Center,United States,2025-01-21
+2025-04-01,Deftones (MH),Detroit,MI,Little Caesars Arena,United States,2025-01-21
+2025-04-03,Deftones (MH),New York City,NY,Madison Square Garden Arena,United States,2025-01-21
+2025-04-04,Deftones (MH),Philadelphia,PA,Wells Fargo Center,United States,2025-01-21
+2025-04-06,Deftones (MH),Washington,DC,Capital One Arena,United States,2025-01-21
+2025-04-08,Deftones (MH),Boston,MA,TD Garden,United States,2025-01-21
+2025-04-09,Deftones (MH),Newark,NJ,Prudential Center,United States,2025-01-21
+2025-01-23,EarthGang,Zurich,,Dynamo,Switzerland,2025-01-23
+2025-01-24,EarthGang,Paris,,Trabendo,France,2025-01-23
+2025-01-26,EarthGang,Manchester,,Gorilla,United Kingdom,2025-01-23
+2025-02-21,Fall Out Boy,Tempe,AZ,Innings Festival,United States,2025-01-21
+2025-05-17,Garbage (MH),Pasadena,CA,Cruel World Festival,United States,2025-01-21
+2025-03-12,Garbage (MH),Bogota,,royale center,Colombia,2025-01-21
+2025-03-14,Garbage (MH),Santiago,,Movistar Arena,Chile,2025-01-23
+2025-03-18,Garbage (MH),,,Estadio Obras Sanitarias,Argentina,2025-01-21
+2025-03-21,Garbage (MH),,Rio De Janeiro,Vivo Rio,Brazil,2025-01-21
+2025-03-22,Garbage (MH),Sao Paulo,,Terra SP,Brazil,2025-01-21
+2025-03-23,Garbage (MH),Curitiba,,Live Curitiba,Brazil,2025-01-23
+2025-04-04,Garbage (MH),Monterrey,,Tecate Pal Norte,Mexico,2025-01-21
+2025-08-02,Garbage (MH),Arlington,TX,Globe Life Field,United States,2025-01-21
+2025-02-17,Gaslight Anthem (MH),Orlando,FL,Flogging Molly's Salty Dog Cruise,United States,2025-01-21
+2025-10-18,Gaslight Anthem (MH),Las Vegas,NV,Las Vegas Festival Grounds (When We Were Young),United States,2025-01-21
+2025-04-04,Gavin DeGraw,Fort Lauderdale,FL,Tortuga Festival,United States,2025-01-21
+2025-01-24,Halestorm (MH),Springfield,MA,MGM Springfield,United States,2025-01-21
+2025-01-25,Halestorm (MH),South Burlington,VT,Higher Ground,United States,2025-01-21
+2025-01-25,Ian Munsick (MH),Fayetteville,AR,JJ's Live,United States,2025-01-21
+2025-02-07,Ian Munsick (MH),Rapid City,SD,James Kjerstad Event Center,United States,2025-01-21
+2025-02-08,Ian Munsick (MH),Clear Lake,IA,Surf Ballroom,United States,2025-01-21
+2025-02-12,Ian Munsick (MH),New York,NY,Webster Hall,United States,2025-01-21
+2025-02-13,Ian Munsick (MH),Philadelphia,PA,Brooklyn Bowl Philadelphia,United States,2025-01-21
+2025-02-14,Ian Munsick (MH),Boston,MA,House of Blues,United States,2025-01-21
+2025-02-21,Ian Munsick (MH),Lexington,KY,Manchester Music Hall,United States,2025-01-21
+2025-02-22,Ian Munsick (MH),Louisville,KY,Old Forester's Paristown Hall,United States,2025-01-21
+2025-02-27,Ian Munsick (MH),Chesterfield,MO,The Factory at the District,United States,2025-01-21
+2025-02-28,Ian Munsick (MH),Springfield,MO,Abou Ben Adhem Shrine Mosque,United States,2025-01-21
+2025-03-01,Ian Munsick (MH),Kansas City,MO,Uptown Theatre,United States,2025-01-21
+2025-03-07,Ian Munsick (MH),Grand Rapids,MI,The Intersection,United States,2025-01-21
+2025-03-08,Ian Munsick (MH),Clive,IA,Horizon Events Center,United States,2025-01-21
+2025-03-21,Ian Munsick (MH),McKees Rocks,PA,Roxian Theater,United States,2025-01-21
+2025-03-22,Ian Munsick (MH),Jim Thorpe,PA,penns peak,United States,2025-01-21
+2025-03-27,Ian Munsick (MH),Austin,TX,Travis County Expo Center,United States,2025-01-21
+2025-03-28,Ian Munsick (MH),Fort Worth,TX,Billy Bob's,United States,2025-01-21
+2025-04-04,Ian Munsick (MH),Corpus Christi,TX,Brewster Street Ice House,United States,2025-01-21
+2025-04-05,Ian Munsick (MH),Somerville,TX,Chilifest,United States,2025-01-21
+2025-04-17,Ian Munsick (MH),Nashville,TN,The Pinnacle,United States,2025-01-21
+2025-01-23,Kameron Marlowe (MH),Athens,GA,Akins Ford Arena,United States,2025-01-21
+2025-01-24,Kameron Marlowe (MH),Charleston,WV,Charleston Coliseum,United States,2025-01-21
+2025-01-25,Kameron Marlowe (MH),State College,PA,Bryce Jordan Center,United States,2025-01-21
+2025-01-30,Kameron Marlowe (MH),Kingston,RI,Ryan Center,United States,2025-01-21
+2025-01-31,Kameron Marlowe (MH),Portland,ME,Cross Insurance Arena,United States,2025-01-21
+2025-02-01,Kameron Marlowe (MH),Amherst,MA,Mullins Center ,United States,2025-01-21
+2025-02-06,Kameron Marlowe (MH),Duluth,MN,DECC AMSOIL ARENA,United States,2025-01-21
+2025-02-07,Kameron Marlowe (MH),Minneapolis,MN,Target Center,United States,2025-01-21
+2025-02-08,Kameron Marlowe (MH),Champaign,IL,State Farm Center,United States,2025-01-21
+2025-02-12,Kameron Marlowe (MH),Detroit,MI,The Fillmore,United States,2025-01-21
+2025-02-13,Kameron Marlowe (MH),Tupelo,MS,Cadence Bank Arena,United States,2025-01-21
+2025-02-14,Kameron Marlowe (MH),Saint Louis,MO,Chaifetz Arena,United States,2025-01-21
+2025-02-15,Kameron Marlowe (MH),Louisville,KY,KFC Yum Center,United States,2025-01-21
+2025-02-20,Kameron Marlowe (MH),Park City,KS,Hartman Arena,United States,2025-01-21
+2025-02-21,Kameron Marlowe (MH),Lincoln,NE,Pinnacle Bank Arena,United States,2025-01-21
+2025-02-22,Kameron Marlowe (MH),Cedar Rapids,IA,Alliant Energy Powerhouse,United States,2025-01-21
+2025-03-07,Kameron Marlowe (MH),Charles Town,WV,Hollywood Casino,United States,2025-01-21
+2025-03-08,Kameron Marlowe (MH),Lexington,KY,Manchester Music Hall,United States,2025-01-21
+2025-03-13,Kameron Marlowe (MH),Tulsa,OK,Cain's Ballroom,United States,2025-01-21
+2025-03-14,Kameron Marlowe (MH),Cedar Pak,TX,The Haute Spot,United States,2025-01-21
+2025-03-15,Kameron Marlowe (MH),Grant,OK,stage 271,United States,2025-01-21
+2025-03-21,Kameron Marlowe (MH),Adrian,MI,Merillat Sport and Fitness Center,United States,2025-01-21
+2025-03-22,Kameron Marlowe (MH),Peoria,IL,Peoria Civic Center,United States,2025-01-21
+2025-03-29,Kameron Marlowe (MH),PORT ST LUCIE,FL,MIDFLORIDA CREDIT UNION EVENT CENTER,United States,2025-01-21
+2025-02-13,Matt Nathanson,Miami,FL,Sail Across The Sun,United States,2025-01-21
+2025-02-19,Matt Nathanson,Clearwater,Fl,Bilheimer Capitol Theatre,United States,2025-01-21
+2025-02-20,Matt Nathanson,Fort Lauderdale,FL,Culture Room,United States,2025-01-21
+2025-02-21,Matt Nathanson,Orlando,FL,House of Blues,United States,2025-01-21
+2025-02-22,Matt Nathanson,Atlanta,GA,Center Stage,United States,2025-01-21
+2025-02-23,Matt Nathanson,Durham,NC,Carolina Theatre of Durham,United States,2025-01-21
+2025-02-25,Matt Nathanson,Washington,DC,Lincoln Theatre,United States,2025-01-21
+2025-02-26,Matt Nathanson,Morristown,NJ,Mayo Performing Arts Center,United States,2025-01-21
+2025-02-27,Matt Nathanson,Glenside,PA,The Keswick Theatre,United States,2025-01-21
+2025-02-28,Matt Nathanson,Port Chester,NY,The Capitol Theatre,United States,2025-01-21
+2025-03-01,Matt Nathanson,Medford,MA,Chevalier Theatre,United States,2025-01-21
+2025-03-02,Matt Nathanson,Buffalo,NY,Asbury Hall at Babeville,United States,2025-01-21
+2025-03-04,Matt Nathanson,Toronto,ON,The Opera House,Canada,2025-01-21
+2025-03-05,Matt Nathanson,Royal Oak,MI,Royal Oak Music Theatre,United States,2025-01-21
+2025-03-06,Matt Nathanson,Evanston,IL,Cahn Auditorium,United States,2025-01-21
+2025-03-08,Matt Nathanson,Minneapolis,MN,Uptown Theatre,United States,2025-01-21
+2025-03-11,Matt Nathanson,Milwaukee,WI,Pabst Theater,United States,2025-01-21
+2025-03-13,Matt Nathanson,Saint Louis,MO,The Pageant,United States,2025-01-21
+2025-03-14,Matt Nathanson,Columbus,OH,The Bluestone,United States,2025-01-21
+2025-03-15,Matt Nathanson,Nashville,TN,Brown Country Music Center,United States,2025-01-21
+2025-03-16,Matt Nathanson,Nashville,TN,Ryman Auditorium,United States,2025-01-21
+2025-03-19,Matt Nathanson,Birmingham,AL,WorkPlay Theatre,United States,2025-01-21
+2025-03-20,Matt Nathanson,New Orleans,LA,Tiptina's,United States,2025-01-21
+2025-03-22,Matt Nathanson,Fort Worth,TX,Tannahill's Tavern & Music Hall,United States,2025-01-21
+2025-03-23,Matt Nathanson,Oklahoma City,OK,Tower Theatre,United States,2025-01-21
+2025-03-25,Matt Nathanson,Denver,CO,Ogden Theater,United States,2025-01-21
+2025-03-26,Matt Nathanson,Aspen,CO,Belly Up,United States,2025-01-21
+2025-03-27,Matt Nathanson,Beaver Creek,CO,Vilar Performing Arts Center,United States,2025-01-21
+2025-03-28,Matt Nathanson,Salt lake City,UT,The Commonwealth Room,United States,2025-01-21
+2025-03-30,Matt Nathanson,Portland,OR,Revolution Hall,United States,2025-01-21
+2025-04-01,Matt Nathanson,Seattle,WA,The Showbox,United States,2025-01-21
+2025-04-03,Matt Nathanson,Napa,CA,The Uptown Theatre,United States,2025-01-21
+2025-04-04,Matt Nathanson,San Francisco,CA,Palace of Fine Arts Theatre,United States,2025-01-21
+2025-04-05,Matt Nathanson,Del Mar,CA,The Sound At Del Mar,United States,2025-01-21
+2025-04-06,Matt Nathanson,Santa Ana,CA,The Observatory OC,United States,2025-01-21
+2025-05-30,Michael Franti & Spearhead (Manhead),Morrison,CO,Red Rocks Amphitheatre,United States,2025-01-21
+2025-11-04,Michael Franti & Spearhead (Manhead),Miami,FL,Soulshine At Sea,United States,2025-01-21
+2025-10-18,Panic! At the Disco,Las Vegas,NV,Las Vegas Festival Grounds (When We Were Young),United States,2025-01-21
+2025-10-19,Panic! At the Disco,Nashville,TN,Nissan Stadium,United States,2025-01-21
+2025-07-18,Toto (MH),West Palm Beach,FL,iTHINK Financial Amphitheatre,United States,2025-01-21
+2025-07-19,Toto (MH),Tampa,FL,MIDFLORIDA Credit Union Amphitheatre,United States,2025-01-21
+2025-07-21,Toto (MH),Birmingham,AL,Coca Cola Amphitheater,United States,2025-01-21
+2025-07-22,Toto (MH),Alpharetta,GA,Ameris Bank Amphitheatre,United States,2025-01-21
+2025-07-24,Toto (MH),Burgettstown,PA,The Pavilion at Star Lake,United States,2025-01-21
+2025-07-25,Toto (MH),Holmdel,NJ,PNC Bank Arts Center,United States,2025-01-21
+2025-07-26,Toto (MH),Boston,MA,Leader Bank Pavilion,United States,2025-01-21
+2025-07-28,Toto (MH),Gilford,NH,BankNH Pavilion,United States,2025-01-21
+2025-07-30,Toto (MH),Bridgeport,CT,Hartford HealthCare Amphitheatre,United States,2025-01-21
+2025-08-01,Toto (MH),Atlantic City,NJ,Hard Rock Live at Etess Arena,United States,2025-01-21
+2025-08-03,Toto (MH),Cincinnati,OH,Riverbend Music Center,United States,2025-01-21
+2025-08-05,Toto (MH),Maryland Heights,MO,Hollywood Casino Amphitheatre STL,United States,2025-01-21
+2025-08-06,Toto (MH),Noblesville,IN,Ruoff Music Center,United States,2025-01-21
+2025-08-08,Toto (MH),Cuyahoga Falls,OH,Blossom Music Center,United States,2025-01-21
+2025-08-09,Toto (MH),Tinley Park,IL,Credit Union 1 Amphitheatre,United States,2025-01-21
+2025-08-11,Toto (MH),Village of Clarkston,MI,Pine Knob Music Theatre,United States,2025-01-21
+2025-08-13,Toto (MH),Bristow,VA,Jiffy Lube Live,United States,2025-01-21
+2025-08-14,Toto (MH),Charlotte,NC,PNC Music Pavilion,United States,2025-01-21
+2025-08-15,Toto (MH),Nashville,TN,Ascend Amphitheater,United States,2025-01-21
+2025-08-17,Toto (MH),Oklahoma City,OK,The Zoo Amphitheatre,United States,2025-01-21
+2025-08-18,Toto (MH),Irving,TX,The Pavilion at Toyota Music Factory,United States,2025-01-21
+2025-08-21,Toto (MH),Phoenix,AZ,Arizona Financial Theatre,United States,2025-01-21
+2025-08-23,Toto (MH),Las Vegas,NV,Fontainebleau Las Vegas - Theatre,United States,2025-01-21
+2025-08-24,Toto (MH),Inglewood,CA,Kia Forum,United States,2025-01-21
+2025-08-25,Toto (MH),Concord,CA,Toyota Pavilion at Concord,United States,2025-01-21
+2025-08-27,Toto (MH),West Valley City,UT,Utah First Credit Union Amphitheatre,United States,2025-01-21
+2025-08-29,Toto (MH),Puyallup,WA,Washington State Fair,United States,2025-01-21
+2025-08-30,Toto (MH),Ridgefield,WA,RV Inn Style Resorts Amphitheater,United States,2025-01-21
+2025-02-06,Tyler Childers (MH),AUKLAND,,SPARK ARENA,New Zealand,2025-01-21
+2025-02-08,Tyler Childers (MH),Sandstone Point,,Sandstone Point Hotel,Australia,2025-01-21
+2025-02-09,Tyler Childers (MH),Tyagarah,,The Green Room - Byron Bay,Australia,2025-01-21
+2025-02-11,Tyler Childers (MH),Sydney,,The Hordern Pavilion,Australia,2025-01-21
+2025-02-15,Tyler Childers (MH),Newcastle,,Foreshore Park,Australia,2025-01-21
+2025-02-16,Tyler Childers (MH),Canbera ACT,,Canbera Royal Theatre,Australia,2025-01-23
+2025-02-20,Tyler Childers (MH),Melbourne,,Sidney Myer Music Bowl,Australia,2025-01-21
+2025-02-22,Tyler Childers (MH),Korumburra,,Coal Creek Community Park,Australia,2025-01-21
+2025-02-24,Tyler Childers (MH),North Adelaide,South Australia,The Drive,Australia,2025-01-21
+2025-02-28,Tyler Childers (MH),Perth,,Kings park & botanic garden,Australia,2025-01-23
+2025-11-15,Tyler Childers (MH),London,,The O2,United Kingdom,2025-01-23
+2025-04-03,Tyler Childers (MH),New Orleans,LA,Smoothie King Center,United States,2025-01-21
+2025-04-06,Tyler Childers (MH),North Little Rock,AR,Simmons Bank Arena,United States,2025-01-21
+2025-04-07,Tyler Childers (MH),Oklahoma City,OK,Paycom Center,United States,2025-01-21
+2025-04-09,Tyler Childers (MH),Minneapolis,MN,Target Center,United States,2025-01-21
+2025-04-13,Tyler Childers (MH),Charlottesville,VA,John Paul Jones Arena,United States,2025-01-21
+2025-04-15,Tyler Childers (MH),Raleigh,NC,Coastal Credit Union Music Park,United States,2025-01-21
+2025-04-16,Tyler Childers (MH),Charlotte,NC,PNC Music Pavilion,United States,2025-01-21
+2025-04-19,Tyler Childers (MH),Lexington,KY,Kroger Field,United States,2025-01-21
+2025-07-26,Tyler Childers (MH),East Troy,WI,Alpine Valley Music Theatre,United States,2025-01-21
+2025-05-29,Tyler Childers (MH),Jacksonville,FL,VyStar Veterans Memorial Arena,United States,2025-01-21
+2025-05-31,Tyler Childers (MH),Panama City Beach,FL,Pepsi Gulf Coast Jam,United States,2025-01-21
+2025-06-01,Tyler Childers (MH),Orange Beach,AL,The Amphitheater at the Wharf,United States,2025-01-21
+2025-06-03,Tyler Childers (MH),The Woodlands,TX,The Cynthia Woods Mitchell Pavillion,United States,2025-01-21
+2025-06-05,Tyler Childers (MH),Albuquerque,NM,Isleta Amphitheater,United States,2025-01-21
+2025-06-07,Tyler Childers (MH),Las Vegas,NV,MGM Grand Garden Arena,United States,2025-01-21
+2025-06-08,Tyler Childers (MH),Phoenix,AZ,Talking Stick Resort Amphitheater,United States,2025-01-21
+2025-06-10,Tyler Childers (MH),Los Angeles,CA,Hollywood Bowl,United States,2025-01-21
+2025-09-24,Tyler Childers (MH),Camden,NJ,Freedom Mortgage Pavilion,United States,2025-01-21
+2025-09-25,Tyler Childers (MH),Mansfield,MA,Xfinity Center,United States,2025-01-21
+2025-09-27,Tyler Childers (MH),Bristow,VA,Jiffy Lube Live,United States,2025-01-21
+2025-09-29,Tyler Childers (MH),Forest Hills,NY,Forest Hills Stadium,United States,2025-01-21
+2025-10-03,Tyler Childers (MH),Cincinnati,OH,Riverbend Music Center,United States,2025-01-21
+2025-10-07,Tyler Childers (MH),Cuyahoga Falls,OH,Blossom Music Center,United States,2025-01-21
+2025-10-10,Tyler Childers (MH),Nashville,TN,Geodis Park,United States,2025-01-21
+2025-01-23,Umphrey's McGee ,Wilmington,DE,The Queen,United States,2025-01-21
+2025-01-24,Umphrey's McGee ,Jim Thorpe,PA,Penn's Peak,United States,2025-01-21
+2025-01-25,Umphrey's McGee ,Atlantic City,NJ,Sound Waves at Hard Rock Hotel & Casino,United States,2025-01-21
+2025-01-30,Umphrey's McGee ,Sayreville,NJ,Starland Ballroom,United States,2025-01-21
+2025-01-31,Umphrey's McGee ,Port Chester,NY,The Capitol Theatre,United States,2025-01-21
+2025-02-02,Umphrey's McGee ,Huntington,NY,Paramount Theatre,United States,2025-01-21
+2025-02-26,Umphrey's McGee ,Columbia,SC,The Senate,United States,2025-01-21
+2025-02-27,Umphrey's McGee ,Birmingham,AL,Iron City Birmingham,United States,2025-01-21
+2025-02-28,Umphrey's McGee ,Chattanooga,TN,The Signal,United States,2025-01-21
+2025-03-01,Umphrey's McGee ,Savannah,GA,Johnny Mercer Theatre,United States,2025-01-21
+2025-03-05,Umphrey's McGee ,Knoxville,TN,The Mill & Mine,United States,2025-01-21
+2025-03-06,Umphrey's McGee ,Louisville,KY,Old Forester's Paristown Hall,United States,2025-01-21
+2025-03-07,Umphrey's McGee ,South Bend,IN,Morris Performing Arts Center,United States,2025-01-21
+2025-03-08,Umphrey's McGee ,Milwaukee,WI,The Riverside Theater,United States,2025-01-21
+2025-03-12,Umphrey's McGee ,Bozeman,MT,The Elm,United States,2025-01-21
+2025-03-13,Umphrey's McGee ,Great Falls,MT,The Newberry,United States,2025-01-21
+2025-03-14,Umphrey's McGee ,Airway Heights,WA,Spokane Live,United States,2025-01-21
+2025-03-15,Umphrey's McGee ,Boise,ID,Treefort Music Festival,United States,2025-01-21
+2025-03-17,Umphrey's McGee ,Stateline,NV,Bally's Lake Tahoe,United States,2025-01-21
+2025-03-19,Umphrey's McGee ,Petaluma,CA,Mystic Theatre,United States,2025-01-21
+2025-03-20,Umphrey's McGee ,Sacramento,CA,Ace of Spades,United States,2025-01-21
+2025-03-21,Umphrey's McGee ,San Diego,CA,The Observatory North Park,United States,2025-01-21
+2025-03-22,Umphrey's McGee ,Santa Ana,CA,The Observatory,United States,2025-01-21
+2025-04-10,WILLIE'S RESERVE (MH),brandon,MS,Brandon Amphitheater,United States,2025-01-21
+2025-04-13,WILLIE'S RESERVE (MH),Macon,GA,Atrium Health Amphitheater,United States,2025-01-21
+2025-04-15,WILLIE'S RESERVE (MH),Gautier,MS,The Sound Amphitheatre,United States,2025-01-21
+2025-04-16,WILLIE'S RESERVE (MH),Huntsville,AL,Orion Amphitheatre,United States,2025-01-21
+2025-04-18,WILLIE'S RESERVE (MH),New Braunfels,TX,Whitewater Amphitheater,United States,2025-01-21
+2025-02-12,WILLIE'S RESERVE (MH),Pompano Beach,FL,Pompano Beach Amphitheater,United States,2025-01-21
+2025-02-13,WILLIE'S RESERVE (MH),Immokalee,FL,Seminole Casino,United States,2025-01-21
+2025-02-15,WILLIE'S RESERVE (MH),Clearwater,FL,The Baycare Sound,United States,2025-01-21
+2025-02-17,WILLIE'S RESERVE (MH),Key West,FL,Coffee Butler Amphitheater,United States,2025-01-21
+2025-02-19,WILLIE'S RESERVE (MH),"St. Augustine, Florida",FL,St. Augustine Amphitheatre,United States,2025-01-21
+2025-02-22,WILLIE'S RESERVE (MH),Orlando,FL,Orlando Amphitheater,United States,2025-01-21
+2025-03-13,WILLIE'S RESERVE (MH),Spicewood,TX,Luck Ranch,United States,2025-01-21
+2025-10-18,Yellowcard (MH),Las Vegas,NV,Las Vegas Festival Grounds (When We Were Young),United States,2025-01-21
+2025-01-23,Zach Top (MH),Denver,CO,Grizzly Rose,United States,2025-01-21
+2025-01-29,Zach Top (MH),Columbus,OH,The Bluestone,United States,2025-01-21
+2025-01-31,Zach Top (MH),Royal Oak,MI,Royal Oak Music Theatre,United States,2025-01-21
+2025-02-01,Zach Top (MH),Cincinnati,OH,The Andrew J Brady Music Center,United States,2025-01-21
+2025-02-06,Zach Top (MH),West Des Moines,IA,Val Air Ballroom,United States,2025-01-21
+2025-02-07,Zach Top (MH),Tulsa,OK,Cain's Ballroom,United States,2025-01-21
+2025-02-13,Zach Top (MH),Jackson,MS,Mississippi Coliseum ,United States,2025-01-21
+2025-02-14,Zach Top (MH),Durant,OK,Chocktaw GrandTheater,United States,2025-01-21
+2025-02-15,Zach Top (MH),Fort Worth,TX,Dickies Arena,United States,2025-01-21
+2025-02-16,Zach Top (MH),San Antonio,TX,Frost Bank Center,United States,2025-01-21
+2025-02-26,Zach Top (MH),Chattanooga,TN,The Signal,United States,2025-01-21
+2025-02-28,Zach Top (MH),Nashville,TN,Ryman Auditorium,United States,2025-01-21
+2025-03-05,Zach Top (MH),Jacksonville,FL,FIVE,United States,2025-01-21
+2025-03-08,Zach Top (MH),Atlanta,GA,Buckhead Theater,United States,2025-01-21

@@ -250,7 +250,12 @@ def safe_upload_file(filename: str, bucket: str, key: str, s3_client) -> bool:
     """Safely upload a file to S3, with retries and error handling"""
     try:
         with open(filename, 'rb') as f:
-            s3_client.upload_fileobj(f, bucket, key)
+            s3_client.upload_fileobj(
+                f, 
+                bucket, 
+                key,
+                ExtraArgs={'ACL': 'public-read'}
+            )
         return True
     except Exception as e:
         logging.error(f"Error uploading {filename} to {bucket}/{key}: {e}")
@@ -360,86 +365,86 @@ def update_everything():
                 raise Exception("Failed to upload latest concerts file")
             logger.info("Successfully uploaded new latest_concerts.csv to DigitalOcean")
 
-            # Generate notifications if there are new concerts
+            # 4. Prepare notification data for each recipient
+            notifications = {}
+            for recipient, config in RECIPIENTS.items():
+                recipient_states = config["states"]
+                
+                # Filter for recipient's states
+                new_for_recipient = new_concerts[new_concerts["state"].isin(recipient_states)]
+                all_for_recipient = new_df[new_df["state"].isin(recipient_states)]
+                
+                # Initialize with empty arrays by default
+                notifications[recipient] = {
+                    "email": config["email"],
+                    "new_concerts": [],
+                    "all_upcoming": []
+                }
+                
+                # Only populate arrays if there are new concerts
+                if len(new_for_recipient) > 0:
+                    logger.info(f"{recipient} has {len(new_for_recipient)} new shows")
+                    notifications[recipient]["new_concerts"] = [
+                        format_concert(c, use_actual_first_seen=True) 
+                        for c in new_for_recipient.to_dict("records")
+                    ]
+                    notifications[recipient]["all_upcoming"] = [
+                        format_concert(c, use_actual_first_seen=False)
+                        for c in all_for_recipient.to_dict("records")
+                    ]
+
+            # Always save notifications, even if empty
+            logger.info("Saving notifications file to /tmp/notifications.json")
+            with open('/tmp/notifications.json', 'w') as f:
+                json.dump(notifications, f, indent=2)
+            
+            # Upload notifications.json
+            safe_upload_file(
+                '/tmp/notifications.json',
+                DO_SPACE_NAME,
+                NOTIFICATIONS_FILE,
+                s3_client
+            )
+
+            # Always update notifications_ready.json
+            timestamp = datetime.now().isoformat()
+            try:
+                s3_client.put_object(
+                    Bucket=DO_SPACE_NAME,
+                    Key='notifications_ready.json',
+                    Body=json.dumps({"ready": True, "timestamp": timestamp}),
+                    ContentType='application/json',
+                    ACL='public-read'
+                )
+                logger.info("Successfully updated notifications_ready.json")
+            except Exception as e:
+                logger.error(f"Failed to update notifications_ready.json: {str(e)}")
+
+            # Save new concerts file if there are any
             if len(new_concerts) > 0:
-                logger.info("Generating notifications for newly added concerts")
-                notifications = {}
-                for recipient, config in RECIPIENTS.items():
-                    logger.info(f"Processing notifications for {recipient}")
-                    recipient_states = config["states"]
+                changes_file = f'new_concerts_{today}.csv'
+                new_concerts.to_csv('/tmp/changes.csv', index=False)
+                safe_upload_file(
+                    '/tmp/changes.csv',
+                    DO_SPACE_NAME,
+                    changes_file,
+                    s3_client
+                )
 
-                    # Filter for recipient's states
-                    new_for_recipient = new_concerts[new_concerts["state"].isin(recipient_states)]
-                    all_for_recipient = new_df[new_df["state"].isin(recipient_states)]
-
-                    if len(new_for_recipient) > 0:
-                        logger.info(f"{recipient} has {len(new_for_recipient)} new shows")
-                        new_concerts_formatted = [
-                            format_concert(c) for c in new_for_recipient.to_dict("records")
-                        ]
-                        all_upcoming_formatted = [
-                            format_concert(c) for c in all_for_recipient.to_dict("records")
-                        ]
-
-                        notifications[recipient] = {
-                            "email": config["email"],
-                            "new_concerts": new_concerts_formatted,
-                            "all_upcoming": all_upcoming_formatted
-                        }
-
-                # Use the safe upload function for all files
-                if notifications:
-                    logger.info("Saving notifications file to /tmp/notifications.json")
-                    with open('/tmp/notifications.json', 'w') as f:
-                        json.dump(notifications, f, indent=2)
-                    
-                    # Upload notifications.json
-                    safe_upload_file(
-                        '/tmp/notifications.json',
-                        DO_SPACE_NAME,
-                        NOTIFICATIONS_FILE,
-                        s3_client
-                    )
-
-                    # Update notifications_ready.json to trigger email sending
-                    timestamp = datetime.now().isoformat()
-                    try:
-                        s3_client.put_object(
-                            Bucket=DO_SPACE_NAME,
-                            Key='notifications_ready.json',
-                            Body=json.dumps({"ready": True, "timestamp": timestamp}),
-                            ContentType='application/json',
-                            ACL='public-read'
-                        )
-                        logger.info("Successfully updated notifications_ready.json")
-                    except Exception as e:
-                        logger.error(f"Failed to update notifications_ready.json: {str(e)}")
-
-                # Save new concerts file if there are any
-                if len(new_concerts) > 0:
-                    changes_file = f'new_concerts_{today}.csv'
-                    new_concerts.to_csv('/tmp/changes.csv', index=False)
-                    safe_upload_file(
-                        '/tmp/changes.csv',
-                        DO_SPACE_NAME,
-                        changes_file,
-                        s3_client
-                    )
-
-                # Update last successful run timestamp
-                timestamp = datetime.now().isoformat()
-                try:
-                    s3_client.put_object(
-                        Bucket=DO_SPACE_NAME,
-                        Key=LAST_RUN_FILE,
-                        Body=timestamp.encode(),
-                        ContentLength=len(timestamp.encode()),
-                        ContentType='text/plain',
-                        ACL='public-read'
-                    )
-                    logger.info("Successfully updated last run timestamp")
-                except Exception as e:
-                    logger.error(f"Failed to update last run timestamp: {str(e)}")
+            # Update last successful run timestamp
+            timestamp = datetime.now().isoformat()
+            try:
+                s3_client.put_object(
+                    Bucket=DO_SPACE_NAME,
+                    Key=LAST_RUN_FILE,
+                    Body=timestamp.encode(),
+                    ContentLength=len(timestamp.encode()),
+                    ContentType='text/plain',
+                    ACL='public-read'
+                )
+                logger.info("Successfully updated last run timestamp")
+            except Exception as e:
+                logger.error(f"Failed to update last run timestamp: {str(e)}")
 
         except Exception as e:
             logger.warning(f"Could not load or compare previous data: {str(e)}", exc_info=True)
