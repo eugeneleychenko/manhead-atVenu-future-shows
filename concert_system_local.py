@@ -5,6 +5,7 @@ import logging
 from gql import Client, gql
 from gql.transport.requests import RequestsHTTPTransport
 import boto3
+import json
 
 # Set up logging
 logging.basicConfig(
@@ -213,6 +214,22 @@ def find_new_concerts(latest_df: pd.DataFrame, previous_df: pd.DataFrame) -> pd.
     new_concerts = latest_df[~latest_df['uuid'].isin(previous_df['uuid'])]
     return new_concerts
 
+def format_concert(concert):
+    """
+    Format a single concert into a readable string.
+    
+    Args:
+        concert: Dictionary containing concert details
+        
+    Returns:
+        str: Formatted concert string
+    """
+    return f"""
+    {concert['band']} at {concert['venue']}
+    Date: {concert['date']}
+    Location: {concert['city']}, {concert['state']}
+    """
+
 def main() -> None:
     """
     Main function to fetch concert data and upload to DigitalOcean Spaces.
@@ -257,21 +274,69 @@ def main() -> None:
                 previous_df = pd.read_csv(PREVIOUS_FILE)
                 new_concerts = find_new_concerts(latest_df, previous_df)
                 
-                if not new_concerts.empty:
-                    logger.info(f"Found {len(new_concerts)} new concerts:")
-                    print("\nNew Concerts:")
-                    print("=============")
+                # Prepare notifications for each recipient
+                notifications = {}
+                today = datetime.now().date()
+                
+                for recipient, info in RECIPIENTS.items():
+                    logger.info(f"Processing notifications for {recipient}")
+                    notifications[recipient] = {
+                        'email': info['email'],
+                        'new_concerts': [],
+                        'all_upcoming': []
+                    }
+                    
+                    # Process all concerts for this recipient
+                    for _, concert in latest_df.iterrows():
+                        if concert['state'] in info['states']:
+                            concert_date = datetime.strptime(concert['date'], '%Y-%m-%d').date()
+                            
+                            # Add to all_upcoming if concert is in the future
+                            if concert_date >= today:
+                                concert_info = format_concert(concert)
+                                notifications[recipient]['all_upcoming'].append(concert_info)
+                    
+                    # Process new concerts for this recipient
                     for _, concert in new_concerts.iterrows():
-                        print(f"{concert['date']} - {concert['band']} at {concert['venue']} ({concert['city']}, {concert['state']})")
-                else:
-                    logger.info("No new concerts found")
+                        if concert['state'] in info['states']:
+                            concert_date = datetime.strptime(concert['date'], '%Y-%m-%d').date()
+                            if concert_date >= today:
+                                concert_info = format_concert(concert)
+                                notifications[recipient]['new_concerts'].append(concert_info)
+                    
+                    logger.info(f"Found {len(notifications[recipient]['new_concerts'])} new and "
+                              f"{len(notifications[recipient]['all_upcoming'])} total concerts for {recipient}")
+
+                # Save notifications to file and upload to DigitalOcean
+                with open(NOTIFICATIONS_FILE, 'w') as f:
+                    json.dump(notifications, f, indent=2)
+                safe_upload_file(NOTIFICATIONS_FILE, DO_SPACE_NAME, NOTIFICATIONS_FILE, s3_client)
+                logger.info("Uploaded notifications.json to DigitalOcean")
+
+                # Create and upload notifications_ready.json
+                ready_data = {
+                    "ready": True,
+                    "timestamp": datetime.now().isoformat()
+                }
+                with open(NOTIFICATIONS_READY_FILE, 'w') as f:
+                    json.dump(ready_data, f)
+                safe_upload_file(NOTIFICATIONS_READY_FILE, DO_SPACE_NAME, NOTIFICATIONS_READY_FILE, s3_client)
+                logger.info("Uploaded notifications_ready.json to DigitalOcean")
+
+                # Print summary
+                print("\nNotification Summary:")
+                print("====================")
+                for recipient, data in notifications.items():
+                    print(f"\n{recipient}:")
+                    print(f"New concerts: {len(data['new_concerts'])}")
+                    print(f"Total upcoming concerts: {len(data['all_upcoming'])}")
             else:
                 logger.info("No previous concert data found for comparison")
         else:
             logger.error("Failed to upload to DigitalOcean Space")
 
         # Cleanup
-        for file in [LATEST_FILE, PREVIOUS_FILE]:
+        for file in [LATEST_FILE, PREVIOUS_FILE, NOTIFICATIONS_FILE, NOTIFICATIONS_READY_FILE]:
             if os.path.exists(file):
                 os.remove(file)
                 logger.info(f"Cleaned up temporary file: {file}")
