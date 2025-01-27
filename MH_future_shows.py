@@ -111,33 +111,6 @@ def main():
             shows = fetch_shows(start_date, end_date)
             st.session_state['shows'] = shows
             st.session_state['filtered_shows'] = shows
-        
-        # Filter options in the middle
-        # st.write("---")
-        # st.write("Filter Options:")
-        
-        if 'shows' in st.session_state:
-            # ... existing filter code ...
-            pass
-            
-        # Debug and last modified at the bottom
-        st.write("---")
-        last_update = get_last_update_time()
-        st.caption(f"Data last updated: {last_update}")
-        
-        show_debug = st.checkbox("Show debug logs")
-        if show_debug:
-            st.write("Cache Info:")
-            st.write(f"fetch_shows cache info: {fetch_shows.cache_info if hasattr(fetch_shows, 'cache_info') else 'No cache info available'}")
-            st.write("Session State:")
-            st.write(st.session_state)
-
-        # Add refresh button
-        if st.button("Refresh Data"):
-            st.session_state.first_run = True  # Reset first_run state
-            fetch_shows.clear()
-            get_last_update_time.clear()
-            st.rerun()
 
     st.title("Upcoming Manhead Artists' Concerts via AtVenu")
     
