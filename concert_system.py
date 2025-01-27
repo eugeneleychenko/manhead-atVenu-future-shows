@@ -24,8 +24,10 @@ DO_SPACE_REGION = 'nyc3'
 DO_SPACE_NAME = 'mh-upcoming-concerts'
 LATEST_FILE = 'latest_concerts.csv'
 PREVIOUS_FILE = 'previous_concerts.csv'
-NOTIFICATIONS_FILE = 'notifications_ready.json'
+NOTIFICATIONS_FILE = 'notifications.json'
+NOTIFICATIONS_READY_FILE = 'notifications_ready.json'
 LAST_RUN_FILE = 'last_successful_run.txt'
+TODAY = datetime.now().strftime('%Y-%m-%d')
 
 # Recipient configurations
 RECIPIENTS = {
@@ -86,6 +88,9 @@ SHOWS_QUERY = gql("""
 
 # Initialize Anthropic client
 anthropic = Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY'))
+
+# At the start of the script
+today = datetime.strptime(TODAY, '%Y-%m-%d').date()
 
 def is_valid_state_code(state):
     """Check if state is a valid 2-letter code"""
@@ -148,10 +153,42 @@ If you cannot determine the state with high confidence, respond with 'UNK'."""
         logger.error(f"Error calling Claude API: {str(e)}")
         return None
 
+def is_new_concert(concert, previous_concerts):
+    """Check if a concert is new by comparing with previous concerts data"""
+    try:
+        # Convert concert date to datetime for comparison
+        concert_date = datetime.strptime(concert['date'], '%Y-%m-%d').date()
+        
+        # Look for matching concerts in previous data
+        matches = previous_concerts[
+            (previous_concerts['band'] == concert['band']) &
+            (previous_concerts['date'] == concert['date']) &
+            (previous_concerts['venue'] == concert['venue'])
+        ]
+        
+        if len(matches) == 0:
+            return True
+            
+        # If found, check if first_seen date is different
+        previous_first_seen = datetime.strptime(matches.iloc[0]['first_seen'], '%Y-%m-%d').date()
+        current_first_seen = datetime.strptime(concert['first_seen'], '%Y-%m-%d').date()
+        
+        return previous_first_seen != current_first_seen
+        
+    except Exception as e:
+        logger.warning(f"Error comparing concert: {str(e)}")
+        return False
+
 def fetch_shows(start_date, end_date):
     """
-    Fetch shows from AtVenu API using the same GraphQL query as in stream_paste.py
-    Then sanitize state codes using Anthropics. 
+    Fetch shows from AtVenu API and sanitize state codes using Anthropic.
+    
+    Args:
+        start_date: datetime object for start of date range
+        end_date: datetime object for end of date range
+        
+    Returns:
+        list: List of processed show dictionaries
     """
     logger.info(f"Beginning fetch_shows from {start_date} to {end_date}")
     
@@ -238,7 +275,15 @@ def fetch_shows(start_date, end_date):
     return processed_shows
 
 def format_concert(concert):
-    """Format a single concert into a readable string"""
+    """
+    Format a single concert into a readable string.
+    
+    Args:
+        concert: Dictionary containing concert details
+        
+    Returns:
+        str: Formatted concert string
+    """
     return f"""
     {concert['band']} at {concert['venue']}
     Date: {concert['date']}
@@ -247,7 +292,16 @@ def format_concert(concert):
     """
 
 def ensure_bucket_public(s3_client, bucket_name):
-    """Ensure the bucket is publicly accessible"""
+    """
+    Ensure the S3 bucket is publicly accessible.
+    
+    Args:
+        s3_client: Boto3 S3 client
+        bucket_name: Name of the bucket
+        
+    Returns:
+        bool: True if successful, False otherwise
+    """
     try:
         # Set bucket policy to public
         public_policy = {
@@ -279,7 +333,18 @@ def ensure_bucket_public(s3_client, bucket_name):
         return False
 
 def safe_upload_file(filename: str, bucket: str, key: str, s3_client) -> bool:
-    """Safely upload a file to S3, with retries and error handling"""
+    """
+    Safely upload a file to S3, with retries and error handling.
+    
+    Args:
+        filename: Local path to file
+        bucket: S3 bucket name
+        key: S3 object key
+        s3_client: Boto3 S3 client
+        
+    Returns:
+        bool: True if successful, False otherwise
+    """
     try:
         # First ensure bucket is public
         ensure_bucket_public(s3_client, bucket)
@@ -300,7 +365,15 @@ def safe_upload_file(filename: str, bucket: str, key: str, s3_client) -> bool:
         return False
 
 def update_everything():
-    """Main function that updates all necessary files and notifications"""
+    """
+    Main function that updates all necessary files and notifications.
+    
+    Fetches new concert data, compares with previous data, generates notifications,
+    and updates all relevant files in S3 storage.
+    
+    Returns:
+        bool: True if successful, False otherwise
+    """
     logger.info("Starting update_everything()")
     try:
         # Set up S3 client
@@ -403,33 +476,53 @@ def update_everything():
                 raise Exception("Failed to upload latest concerts file")
             logger.info("Successfully uploaded new latest_concerts.csv to DigitalOcean")
 
+            # Get today's date
+            today = datetime.strptime(today, '%Y-%m-%d').date()  # Convert string to datetime.date
+
+            print(f"Today's date: {today}")
+            print(f"Total concerts loaded: {len(new_df)}")
+            print(f"Sample concert state: {new_df.iloc[0]['state']}")
+
             # 4. Prepare notification data for each recipient
             notifications = {}
-            for recipient, config in RECIPIENTS.items():
-                recipient_states = config["states"]
-                
-                # Filter for recipient's states
-                new_for_recipient = new_concerts[new_concerts["state"].isin(recipient_states)]
-                all_for_recipient = new_df[new_df["state"].isin(recipient_states)]
-                
-                # Initialize with empty arrays by default
+            for recipient, info in RECIPIENTS.items():
+                print(f"\nProcessing {recipient} who is interested in states: {info['states']}")
                 notifications[recipient] = {
-                    "email": config["email"],
-                    "new_concerts": [],
-                    "all_upcoming": []
+                    'email': info['email'],
+                    'new_concerts': [],
+                    'all_upcoming': []
                 }
                 
-                # Only populate arrays if there are new concerts
-                if len(new_for_recipient) > 0:
-                    logger.info(f"{recipient} has {len(new_for_recipient)} new shows")
-                    notifications[recipient]["new_concerts"] = [
-                        format_concert(c, use_actual_first_seen=True) 
-                        for c in new_for_recipient.to_dict("records")
-                    ]
-                    notifications[recipient]["all_upcoming"] = [
-                        format_concert(c, use_actual_first_seen=False)
-                        for c in all_for_recipient.to_dict("records")
-                    ]
+                # Get all upcoming concerts in recipient's states
+                for _, concert in new_df.iterrows():
+                    try:
+                        if concert['state'] in info['states']:
+                            print(f"State match found for {concert['state']}")
+                            # Convert concert date to datetime.date
+                            concert_date = datetime.strptime(str(concert['date']), '%Y-%m-%d').date()
+                            print(f"Concert date: {concert_date}, Today: {today}")
+                            
+                            if concert_date >= today:
+                                concert_info = format_concert(concert)
+                                print(f"Adding to all_upcoming: {concert_info}")
+                                notifications[recipient]['all_upcoming'].append(concert_info)
+                                
+                                # Only check for new concerts if we successfully loaded previous data
+                                if previous_df is not None and is_new_concert(concert, previous_df):
+                                    notifications[recipient]['new_concerts'].append(concert_info)
+                    except Exception as e:
+                        logger.warning(f"Error processing concert {concert.get('band', 'unknown')}: {str(e)}")
+                        continue
+                
+                logger.info(f"Processed notifications for {recipient}: {len(notifications[recipient]['new_concerts'])} new, {len(notifications[recipient]['all_upcoming'])} total")
+
+            # Save notifications to JSON file
+            try:
+                with open('notifications.json', 'w') as f:
+                    json.dump(notifications, f, indent=2)
+                logger.info("Successfully saved notifications to notifications.json")
+            except Exception as e:
+                logger.error(f"Error saving notifications.json: {str(e)}")
 
             # Always save notifications, even if empty
             logger.info("Saving notifications file to /tmp/notifications.json")
@@ -449,7 +542,7 @@ def update_everything():
             try:
                 s3_client.put_object(
                     Bucket=DO_SPACE_NAME,
-                    Key='notifications_ready.json',
+                    Key=NOTIFICATIONS_READY_FILE,
                     Body=json.dumps({"ready": True, "timestamp": timestamp}),
                     ContentType='application/json',
                     ACL='public-read'
@@ -506,7 +599,12 @@ def update_everything():
 
 @app.route('/update', methods=['GET'])
 def trigger_update():
-    """API endpoint to trigger the update process"""
+    """
+    API endpoint to trigger the update process.
+    
+    Returns:
+        tuple: (JSON response, HTTP status code)
+    """
     logger.info("Entered /update endpoint")
     try:
         success = update_everything()
@@ -534,7 +632,12 @@ def trigger_update():
 
 @app.route('/health', methods=['GET'])
 def health_check():
-    """Simple health-check endpoint."""
+    """
+    Simple health-check endpoint.
+    
+    Returns:
+        tuple: (JSON response, HTTP status code)
+    """
     return jsonify({
         'status': 'healthy',
         'timestamp': datetime.now().isoformat()

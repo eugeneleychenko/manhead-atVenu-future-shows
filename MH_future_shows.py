@@ -44,10 +44,12 @@ def fetch_shows(start_date, end_date):
         logger.info(f"Successfully loaded CSV with {len(df)} rows")
         logger.info(f"DataFrame memory usage: {df.memory_usage().sum() / 1024:.2f} KB")
         
-        # Rest of processing...
+        # Process dates and filter
         df['date'] = pd.to_datetime(df['date'])
         mask = (df['date'] >= pd.Timestamp(start_date)) & (df['date'] <= pd.Timestamp(end_date))
         filtered_df = df[mask]
+        
+        # Convert to records with all fields
         shows = filtered_df.to_dict('records')
         
         logger.info(f"Filtered to {len(shows)} shows between {start_date} and {end_date}")
@@ -154,7 +156,8 @@ def main():
         else:
             df = pd.DataFrame(shows)
             df["date"] = pd.to_datetime(df["date"]).dt.date
-            df = df[["date", "band", "city", "state", "venue", "country"]]
+            # Update columns to include all fields
+            df = df[["uuid", "date", "band", "city", "state", "venue", "country"]]
             st.dataframe(df)
 
             csv = df.to_csv(index=False)
