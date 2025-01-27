@@ -434,7 +434,10 @@ def trigger_update():
                                     # Add to all_upcoming if concert is in the future
                                     if concert_date >= today:
                                         concert_info = format_concert(concert)
-                                        notifications[recipient]['all_upcoming'].append(concert_info)
+                                        notifications[recipient]['all_upcoming'].append({
+                                            'date': concert['date'],
+                                            'info': concert_info
+                                        })
                         
                             # Process new concerts for this recipient
                             for _, concert in new_concerts.iterrows():
@@ -442,8 +445,17 @@ def trigger_update():
                                     concert_date = datetime.strptime(concert['date'], '%Y-%m-%d').date()
                                     if concert_date >= today:
                                         concert_info = format_concert(concert)
-                                        notifications[recipient]['new_concerts'].append(concert_info)
-                        
+                                        notifications[recipient]['new_concerts'].append({
+                                            'date': concert['date'],
+                                            'info': concert_info
+                                        })
+                            
+                            # Sort both lists by date and extract just the concert info
+                            notifications[recipient]['all_upcoming'].sort(key=lambda x: x['date'])
+                            notifications[recipient]['new_concerts'].sort(key=lambda x: x['date'])
+                            notifications[recipient]['all_upcoming'] = [x['info'] for x in notifications[recipient]['all_upcoming']]
+                            notifications[recipient]['new_concerts'] = [x['info'] for x in notifications[recipient]['new_concerts']]
+                            
                             logger.info(f"Found {len(notifications[recipient]['new_concerts'])} new and "
                                       f"{len(notifications[recipient]['all_upcoming'])} total concerts for {recipient}")
 
