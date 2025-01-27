@@ -157,7 +157,7 @@ def main():
             df = pd.DataFrame(shows)
             df["date"] = pd.to_datetime(df["date"]).dt.date
             # Update columns to include all fields
-            df = df[["uuid", "date", "band", "city", "state", "venue", "country"]]
+            df = df[["date", "band", "city", "state", "venue", "country"]]
             st.dataframe(df)
 
             csv = df.to_csv(index=False)
