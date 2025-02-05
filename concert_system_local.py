@@ -357,11 +357,11 @@ def format_concert(concert):
     Returns:
         str: Formatted concert string
     """
-    return f"""
-    {concert['band']} at {concert['venue']}
-    Date: {concert['date']}
-    Location: {concert['city']}, {concert['state']}
-    """
+    # Parse and format the date
+    date_obj = datetime.strptime(concert['date'], '%Y-%m-%d')
+    formatted_date = date_obj.strftime('%B %d, %Y')
+    
+    return f"🎸 {concert['band']} Concert\n📅 {formatted_date}\n📍 {concert['venue']}, {concert['city']}, {concert['state']}\n\n"
 
 @app.route('/update', methods=['GET'])
 def trigger_update():
