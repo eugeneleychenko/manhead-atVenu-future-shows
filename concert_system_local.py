@@ -349,19 +349,23 @@ def find_new_concerts(latest_df: pd.DataFrame, previous_df: pd.DataFrame) -> pd.
 
 def format_concert(concert):
     """
-    Format a single concert into a readable string.
+    Format a single concert into an HTML string.
     
     Args:
         concert: Dictionary containing concert details
         
     Returns:
-        str: Formatted concert string
+        str: Formatted concert HTML string
     """
     # Parse and format the date
     date_obj = datetime.strptime(concert['date'], '%Y-%m-%d')
     formatted_date = date_obj.strftime('%B %d, %Y')
     
-    return f"🎸 {concert['band']} Concert\n📅 {formatted_date}\n📍 {concert['venue']}, {concert['city']}, {concert['state']}\n\n"
+    return f"""<div class="concert" style="margin-bottom: 10px;">
+<p style="margin: 0;">🎸 {concert['band']} Concert</p>
+<p style="margin: 0;">📅 {formatted_date}</p>
+<p style="margin: 0;">📍 {concert['venue']}, {concert['city']}, {concert['state']}</p>
+</div>"""
 
 @app.route('/update', methods=['GET'])
 def trigger_update():
@@ -455,6 +459,10 @@ def trigger_update():
                             notifications[recipient]['new_concerts'].sort(key=lambda x: x['date'])
                             notifications[recipient]['all_upcoming'] = [x['info'] for x in notifications[recipient]['all_upcoming']]
                             notifications[recipient]['new_concerts'] = [x['info'] for x in notifications[recipient]['new_concerts']]
+                            
+                            # Join the concert info strings without any separator
+                            notifications[recipient]['all_upcoming'] = ''.join(notifications[recipient]['all_upcoming'])
+                            notifications[recipient]['new_concerts'] = ''.join(notifications[recipient]['new_concerts'])
                             
                             logger.info(f"Found {len(notifications[recipient]['new_concerts'])} new and "
                                       f"{len(notifications[recipient]['all_upcoming'])} total concerts for {recipient}")
