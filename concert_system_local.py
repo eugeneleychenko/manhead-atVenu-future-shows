@@ -38,6 +38,22 @@ RECIPIENTS = {
     'steve': {
         'states': ['NY', 'NJ', 'MA', 'CT', 'NC'],
         'email': 'nycspicebo+steve@gmail.com'
+    },
+    'karina': {
+        'states': ['CA'],
+        'email': 'karina@manheadmerch.com'
+    },
+    'fez': {
+        'states': ['CA'],
+        'email': 'fez@manheadmerch.com'
+    },
+    'nickmetroka': {
+        'states': ['NY', 'NJ'],
+        'email': 'nickmetroka@manheadmerch.com'
+    },
+    'bruce': {
+        'states': ['TN'],
+        'email': 'bruce@manheadmerch.com'
     }
 }
 
